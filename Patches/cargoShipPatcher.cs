@@ -1,17 +1,18 @@
 ﻿using HarmonyLib;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
 using Mafi.Core.Buildings.Cargo.Ships;
 using Mafi;
 
-namespace COIExtended
+
+namespace COIExtended.Patches
 {
+
+
     [HarmonyPatch(typeof(CargoShip), "cctor")]
     internal static class cargoShipPatcher
     {
+        
         public static void runPatch()
         {
             try
@@ -23,6 +24,8 @@ namespace COIExtended
                 {
                     worldDelayField.SetValue(null, 55.38.Seconds());
                 }
+
+
             }
             catch { }
         }

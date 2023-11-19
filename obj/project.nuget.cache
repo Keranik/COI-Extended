@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "CsA7nIV6TjxdWgGyOdJpAfsgEIqiLRc+Ap2yZq523ir9v9Ik/BKaT1yMW5nYWsYn5fVH2yedREkUX3jdFy9FBg==",
+  "success": true,
+  "projectFilePath": "C:\\CoIModding\\COIExtended-Source\\COIExtended.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Keranik\\.nuget\\packages\\lib.harmony\\2.2.2\\lib.harmony.2.2.2.nupkg.sha512"
+  ],
+  "logs": []
+}

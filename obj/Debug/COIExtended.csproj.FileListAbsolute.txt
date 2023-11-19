@@ -1,0 +1,14 @@
+C:\temp\StorageExpanded-0.0.1\obj\Debug\COIExtended.csproj.AssemblyReference.cache
+C:\temp\StorageExpanded-0.0.1\obj\Debug\COIExtended.GeneratedMSBuildEditorConfig.editorconfig
+C:\temp\StorageExpanded-0.0.1\obj\Debug\COIExtended.csproj.CoreCompileInputs.cache
+C:\temp\StorageExpanded-0.0.1\obj\Debug\COIExtended.csproj.CopyComplete
+C:\temp\StorageExpanded-0.0.1\obj\Debug\COIExtended.dll
+C:\temp\StorageExpanded-0.0.1\obj\Debug\COIExtended.pdb
+C:\CoIModding\COIExtended-Source\obj\Debug\COIExtended.csproj.AssemblyReference.cache
+C:\CoIModding\COIExtended-Source\obj\Debug\COIExtended.GeneratedMSBuildEditorConfig.editorconfig
+C:\CoIModding\COIExtended-Source\obj\Debug\COIExtended.csproj.CoreCompileInputs.cache
+C:\Users\Keranik\AppData\Roaming\Captain of Industry\Mods\COIExtended\COIExtended.dll
+C:\Users\Keranik\AppData\Roaming\Captain of Industry\Mods\COIExtended\COIExtended.pdb
+C:\CoIModding\COIExtended-Source\obj\Debug\COIExtended.csproj.CopyComplete
+C:\CoIModding\COIExtended-Source\obj\Debug\COIExtended.dll
+C:\CoIModding\COIExtended-Source\obj\Debug\COIExtended.pdb

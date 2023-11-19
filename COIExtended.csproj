@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <TargetFramework>net472</TargetFramework>
@@ -26,6 +26,36 @@
   <ItemDefinitionGroup>
     <PackageReference ExcludeAssets="system" />
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <Compile Remove="DoNotSource\**" />
+    <Compile Remove="Unused Files\**" />
+    <EmbeddedResource Remove="DoNotSource\**" />
+    <EmbeddedResource Remove="Unused Files\**" />
+    <None Remove="DoNotSource\**" />
+    <None Remove="Unused Files\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="CoolSnippets.cs" />
+    <Compile Remove="EntityHelper.cs" />
+    <Compile Remove="FluidChanges - Copy.cs" />
+    <Compile Remove="Logistics\CargoShipBuildManager.cs" />
+    <Compile Remove="Logistics\CargoShipProgressManager.cs" />
+    <Compile Remove="Logistics\ItemEventHandler.cs" />
+    <Compile Remove="Prototypes\Buildings\CargoDrydockFactoryMb.cs" />
+    <Compile Remove="Prototypes\Buildings\CargoDrydockMb.cs" />
+    <Compile Remove="Prototypes\Buildings\CargoDrydockFactoryMb.cs" />
+    <Compile Remove="Prototypes\Buildings\CargoDrydockMb.cs" />
+    <Compile Remove="Prototypes\Buildings\ShipConstructionManager.cs" />
+    <Compile Remove="UI\CargoDrydockWindowController.cs" />
+    <Compile Remove="Utilities.cs" />
+    <Compile Remove="Workbench\CargoDrydockInspector.cs" />
+    <Compile Remove="Workbench\CargoDrydockWindowController.cs" />
+    <Compile Remove="Workbench\CargoDrydockWindowView.cs" />
+    <Compile Remove="Workbench\COIE_ShipyardInspector.cs" />
+    <Compile Remove="Workbench\COIE_ShipyardWindowController.cs" />
+    <Compile Remove="Workbench\COIE_ShipyardWindowView.cs" />
+    <Compile Remove="Workbench\Workbench.cs" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Lib.Harmony" Version="2.2.2" />
   </ItemGroup>
@@ -129,6 +159,11 @@
     <None Update="StorageExpanded.dll.config">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Entities\" />
+    <Folder Include="Logistics\CargoShipyard\" />
+    <Folder Include="Workbench\" />
   </ItemGroup>
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="del &quot;$(TargetDir)System.*.dll&quot;" />
