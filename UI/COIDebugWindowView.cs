@@ -21,6 +21,12 @@ using Mafi.Core.Buildings.Cargo.Modules;
 using COIExtended.Extensions;
 using Mafi.Core;
 using Mafi.Unity.InputControl.Inspectors;
+using System.Drawing.Drawing2D;
+using Mafi.Core.PropertiesDb;
+using static COIExtended.World.NewMapGenerator;
+using Mafi.Collections;
+using static Mafi.Base.Assets.Core;
+using Mafi.Core.Simulation;
 
 namespace COIExtended.UI
 {
@@ -34,16 +40,20 @@ namespace COIExtended.UI
         private WorldMapManager m_worldManager;
         private ProtosDb m_protosDb;
         private CargoDepotManager m_cargoManager;
-        
+        private IReadOnlyDictionary<WorldMapLocId, WorldMapLocation> m_locations;
+        private WorldMap m_currentMap;
+        private IGameOverManager m_gameManager;
+
         //private readonly IInputScheduler _inputScheduler;
 
-        public COIDebugWindowView(EntitiesManager entityManager, TravelingFleetManager fleetManager, WorldMapManager worldmapManager, ProtosDb protoDBB, CargoDepotManager c_manager) : base("COIDebugWindowView")
+        public COIDebugWindowView(EntitiesManager entityManager, TravelingFleetManager fleetManager, WorldMapManager worldmapManager, ProtosDb protoDBB, CargoDepotManager c_manager, IGameOverManager gameManager) : base("COIDebugWindowView")
         {
             m_entitiesManager = entityManager;
             m_fleetManager = fleetManager;
             m_worldManager = worldmapManager;
             m_protosDb = protoDBB;
             m_cargoManager = c_manager;
+            m_gameManager = gameManager;
         }
 
         protected override void BuildWindowContent()
@@ -67,18 +77,49 @@ namespace COIExtended.UI
                 .OnClick(() => RevealAllVillages());
             villagesBtn.AppendTo(_debugWindow, villagesBtn.GetOptimalSize(), ContainerPosition.MiddleOrCenter);
 
-            AddSectionTitle(_debugWindow, new LocStrFormatted("Add Cargo Ship"), null, new Offset(15,0,0,0));
+            AddSectionTitle(_debugWindow, new LocStrFormatted("Generate New Map"), null, new Offset(15,0,0,0));
             var cargoBtn = Builder.NewBtnPrimary("GO")
                 .SetButtonStyle(Builder.Style.Global.PrimaryBtn)
-                .SetText(new LocStrFormatted("Add Ship"))
-                .OnClick(() => AddCargoShip());
+                .SetText(new LocStrFormatted("Make New Map (Slow)"))
+                .OnClick(() => AddTitaniumSettlement());
             cargoBtn.AppendTo(_debugWindow, cargoBtn.GetOptimalSize(), ContainerPosition.MiddleOrCenter);
-            
+
+            var descTxt = Builder.NewTxt("Explanation")
+                .SetText("This function will create a new map.  It can take a long time to do so!  Old contracts and quick trades will be duplicated in your list, this has no effect on gameplay.  New world map will take place of the old world map and new locations will be included.");
+            descTxt.AppendTo(_debugWindow);
+
+            AddSectionTitle(_debugWindow, new LocStrFormatted("Reverse Game Over"), null, new Offset(15, 0, 0, 0));
+            var gameoverBtn = Builder.NewBtnPrimary("GO")
+                .SetButtonStyle(Builder.Style.Global.PrimaryBtn)
+                .SetText(new LocStrFormatted("Game Not Over"))
+                .OnClick(() => UndoGameOver());
+            gameoverBtn.AppendTo(_debugWindow, gameoverBtn.GetOptimalSize(), ContainerPosition.MiddleOrCenter);
+
             _debugWindow.PutTo(GetContentPanel());
 
         }
 
-        public void RevealAllVillages()
+        public void UndoGameOver()
+        {
+            PropertyInfo isGameOverProperty = typeof(GameOverManager).GetProperty("IsGameOver", BindingFlags.Public | BindingFlags.Instance);
+            if (isGameOverProperty != null && isGameOverProperty.CanWrite)
+            {
+                isGameOverProperty.SetValue(m_gameManager, false, null);
+            }
+            else
+            {
+                // Handle the case where the property is not found or cannot be written to
+            }
+        }
+        public void AddTitaniumSettlement()
+        {
+            NewMapGenerator worldGen = new NewMapGenerator(m_protosDb);
+            WorldMap newWorldMap = worldGen.CreateWorldMap();
+            m_worldManager.SetMap(newWorldMap);
+        }
+
+
+            public void RevealAllVillages()
         {
             foreach (KeyValuePair<string, WorldMapLocation> locationEntry in WorldMapLocationsHolder.Locations)
             {

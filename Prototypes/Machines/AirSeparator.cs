@@ -17,7 +17,7 @@ internal class AirSeparator : IModData
     {
         LayoutEntityBuilderState<MachineProtoBuilder.MachineProtoBuilderStateBase> layoutEntityBuilderState = registrator.MachineProtoBuilder
                .Start("Air Separator II", NewIDs.Machines.AirSeparatorT2, "name of a machine")
-               .Description("Performs a cryogenic distillation process at temperatures reaching -200 °C to separate atmospheric air into its primary components - oxygen and nitrogen.", "short description of a machine")
+               .Description("An air separator is a device used for fractionally distilling atmospheric air to separate and extract its primary components, notably oxygen and nitrogen.", "short description of a machine")
                .SetCost(Costs.Build.CP3(50).Workers(4).MaintenanceT2(3), false)
                .SetElectricityConsumption(375.Kw())
                .SetCategories(new Proto.ID[]

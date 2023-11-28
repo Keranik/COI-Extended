@@ -10,7 +10,7 @@ internal class ChemicalPlantT3 : IModData
     {
         registrator.ResearchNodeProtoBuilder
             .Start("Chemical Plant III", NewIDs.Research.ChemicalPlantT3)
-            .Description("A better chemical plant.")
+            .Description("An enhanced chemical plant with increased efficiency and the latest technology.")
             .AddMachineToUnlock(NewIDs.Machines.ChemicalPlantIII, false)
             .AddRecipeToUnlock(NewIDs.Recipes.TitaniumDioxide)
             .AddRecipeToUnlock(NewIDs.Recipes.FertilizerProductionT3)
@@ -21,7 +21,7 @@ internal class ChemicalPlantT3 : IModData
             .AddRecipeToUnlock(NewIDs.Recipes.AnestheticsProductionT3)
             .AddRecipeToUnlock(NewIDs.Recipes.MorphineProductionT3)
             .SetCosts(new ResearchCostsTpl(45))
-            .SetGridPosition(new Vector2i(124, 44))
+            .SetGridPosition(new Vector2i(120, 42))
             .AddParents(registrator.PrototypesDb.GetOrThrow<ResearchNodeProto>(NewIDs.Research.IlmeniteOreProcessing))
             .BuildAndAdd();
 

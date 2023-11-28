@@ -34,7 +34,7 @@ internal class Loose : IModData
         Proto.Str ilmeniteOreString = Proto.CreateStr(
             NewIDs.Products.IlmeniteOre, // Product ID
             "Ilmenite Ore", // Display name
-            "Ilmenite ore is a natural resource containing titanium, used in industries like aerospace and manufacturing. It's commonly found alongside other minerals like rutile. Processing ilmenite ore extracts valuable titanium dioxide for various applications.", // Description
+            "Ilmenite ore is a black, heavy, titanium-iron oxide mineral, commonly used as the primary source for titanium production and various pigment applications.", // Description
             null // Tooltip, not needed so set to null
         );
 
@@ -68,7 +68,7 @@ internal class Loose : IModData
         Proto.Str crushedIlmeniteOreString = Proto.CreateStr(
             NewIDs.Products.IlmeniteOreCrushed, // Product ID
             "Ilmenite Ore (Crushed)", // Display name
-            "The usual Ilmenite Ore you know and love, but crushed.", // Description
+            "Ilmenite that has been mechanically processed into smaller particles, facilitating the extraction of titanium during subsequent refining processes.", // Description
             null // Tooltip, not needed so set to null
         );
 
@@ -102,7 +102,7 @@ internal class Loose : IModData
         Proto.Str titaniumOreString = Proto.CreateStr(
             NewIDs.Products.TitaniumOre, // Product ID
             "Titanium Ore", // Display name
-            "Titanium ore is a natural material found in rocks and minerals. It's the primary source of titanium!", // Description
+            "Titanium ore is a naturally occurring mineral, primarily in the forms of ilmenite and rutile, that is mined and processed to extract titanium for various industrial uses.", // Description
             null // Tooltip, not needed so set to null
         );
 
@@ -135,7 +135,7 @@ internal class Loose : IModData
         Proto.Str ilmeniteOreConcentrateString = Proto.CreateStr(
             NewIDs.Products.IlmeniteOreConcentrate, // Product ID
             "Ilmenite Ore Concentrate", // Display name
-            "High-purity Ilmenite Ore that has been processed and can be used to produce titanium dioxides.", // Description
+            "Ilmenite concentrate is a processed form of ilmenite ore, enriched in titanium and iron content, typically used as a raw material in the production of titanium dioxide and metal.", // Description
             null // Tooltip, not needed so set to null
         );
 

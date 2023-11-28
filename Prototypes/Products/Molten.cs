@@ -20,6 +20,7 @@ internal class Molten : IModData
                 .SetMaterial("Assets/Base/Machines/MetalWorks/Caster/MoltenSteel/MoltenSteel.mat")
                 .SetColor(new ColorRgba(255, 50, 0))
                 .SetRadioactivity(0)
+                .Description("Molten titanium ore is the liquefied form of titanium minerals, typically achieved through high-temperature processing, used in the extraction and purification of titanium.")
                 .BuildAndAdd();
     }
 

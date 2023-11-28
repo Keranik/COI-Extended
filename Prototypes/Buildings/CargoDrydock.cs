@@ -20,9 +20,8 @@ namespace COIExtended.Prototypes.Buildings;
 [GenerateSerializer(false,null,0)]
 public class CargoDrydock : LayoutEntity, IEntityWithWorkers, IEntityWithGeneralPriority, IEntity, IIsSafeAsHashKey, IElectricityConsumingEntity, IEntityWithSimUpdate, IEntityWithEmission, IStaticEntity, IEntityWithPorts, IMaintainedEntity
 {
-    [DoNotSave(0, null)]
     public SimStep LastWorkedOnSimStep { get; private set; }
-    private CargoDrydockProto m_proto;
+    public new readonly CargoDrydockProto Prototype;
     public override bool CanBePaused => true;
     public Option<ProductBuffer> cp4Buffer;
     public Option<ProductBuffer> e3Buffer;
@@ -30,10 +29,8 @@ public class CargoDrydock : LayoutEntity, IEntityWithWorkers, IEntityWithGeneral
     public Option<ProductBuffer> cargoShipProgess;
     MaintenanceCosts IMaintainedEntity.MaintenanceCosts => Prototype.Costs.Maintenance;
     public bool IsIdleForMaintenance => true;
-    [DoNotSave(0, null)]
     public IEntityMaintenanceProvider Maintenance { get; private set; }
     private readonly IElectricityConsumer m_electricityConsumer;
-    [DoNotSave(0, null)]
     public State CurrentState { get; private set; }
     Electricity IElectricityConsumingEntity.PowerRequired => Prototype.ElectricityConsumed;
     private readonly IProductsManager m_productsManager;
@@ -41,31 +38,14 @@ public class CargoDrydock : LayoutEntity, IEntityWithWorkers, IEntityWithGeneral
     int IEntityWithWorkers.WorkersNeeded => Prototype.Costs.Workers;
     [DoNotSave(0, null)]
     bool IEntityWithWorkers.HasWorkersCached { get; set; }
-    [DoNotSave(0, null)]
     public bool IsActive { get; private set; }
-    [DoNotSave(0, null)]
-    private readonly TickTimer m_progressTimer;
-    [DoNotSave(0, null)]
+    private TickTimer m_progressTimer;
     public bool canProgress => m_progressTimer.IsNotFinished;
     public int partialProgress;
 
     private static readonly Action<object, BlobWriter> s_serializeDataDelayedAction;
 
     private static readonly Action<object, BlobReader> s_deserializeDataDelayedAction;
-
-    [DoNotSave(0, null)]
-    public new CargoDrydockProto Prototype
-    {
-        get
-        {
-            return m_proto;
-        }
-        protected set
-        {
-            m_proto = value;
-            base.Prototype = value;
-        }
-    }
 
     public enum State
     {
@@ -209,6 +189,13 @@ public class CargoDrydock : LayoutEntity, IEntityWithWorkers, IEntityWithGeneral
         SimStep.Serialize(LastWorkedOnSimStep, writer);
         writer.WriteGeneric(m_electricityConsumer);
         writer.WriteGeneric(Prototype);
+        writer.WriteGeneric(Maintenance);
+        Option<ProductBuffer>.Serialize(cp4Buffer, writer);
+        Option<ProductBuffer>.Serialize(e3Buffer, writer);
+        Option<ProductBuffer>.Serialize(titaniumBuffer, writer);
+        Option<ProductBuffer>.Serialize(cargoShipProgess, writer);
+        TickTimer.Serialize(m_progressTimer, writer);
+        writer.WriteInt(partialProgress);
     }
 
     public static CargoDrydock Deserialize(BlobReader reader)
@@ -226,11 +213,17 @@ public class CargoDrydock : LayoutEntity, IEntityWithWorkers, IEntityWithGeneral
         LastWorkedOnSimStep = SimStep.Deserialize(reader);
         reader.SetField(this, "m_electricityConsumer", reader.ReadGenericAs<IElectricityConsumer>());
         reader.SetField(this, "Prototype", reader.ReadGenericAs<CargoDrydockProto>());
+        Maintenance = reader.ReadGenericAs<IEntityMaintenanceProvider>();
+        cp4Buffer = Option<ProductBuffer>.Deserialize(reader);
+        e3Buffer = Option<ProductBuffer>.Deserialize(reader);
+        titaniumBuffer = Option<ProductBuffer>.Deserialize(reader);
+        cargoShipProgess = Option<ProductBuffer>.Deserialize(reader);
+        reader.SetField(this, "m_progressTimer", TickTimer.Deserialize(reader));
+        partialProgress = reader.ReadInt();
     }
 
     static CargoDrydock()
     {
-        //MBiHIp97M4MqqbtZOh.Rbva8xJFA();
         s_serializeDataDelayedAction = delegate (object obj, BlobWriter writer)
         {
             ((CargoDrydock)obj).SerializeData(writer);

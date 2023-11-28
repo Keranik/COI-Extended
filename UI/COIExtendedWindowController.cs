@@ -26,7 +26,7 @@ namespace COIExtended.UI
 
         public override void RegisterUi(UiBuilder builder)
         {
-            //_toolbarController.AddMainMenuButton("COI: Extended Debug Menu", this, "Assets/COIExtended/Icons/DebugMenu.png", 1338f, _ => KeyBindings.FromKey(KbCategory.Tools, KeyCode.F9));
+            _toolbarController.AddMainMenuButton("COI: Extended Debug Menu", this, "Assets/COIExtended/Icons/DebugMenu.png", 1338f, _ => KeyBindings.FromKey(KbCategory.Tools, KeyCode.F9));
 
             base.RegisterUi(builder);
         }

@@ -27,6 +27,7 @@ internal class SettlingTank : IModData
      .SetCustomIconPath("Assets/COIExtended/Buildings/SettlingTankII/SettlingTankII.png")
      .SetAnimationParams(AnimationParams.Loop(new Percent?(80.Percent()), false, null))
      .EnableSemiInstancedRendering(default(ImmutableArray<string>))
+     .Description("A settling tank is a large basin where solids in suspension, such as those from mining processes, settle to the bottom under gravity, allowing for the separation and extraction of valuable materials.")
      .BuildAndAdd();
 
         registrator.RecipeProtoBuilder

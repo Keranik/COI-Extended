@@ -77,6 +77,7 @@ public class CargoDrydockInspector : IEntityInspector<CargoDrydock>
 
     public IEntityInspector Create(CargoDrydock entity)
     {
+        Debug.LogFormat("Activating on Entity {0}", entity.Id);
         SelectedEntity = entity.CheckNotNull(); 
         return this;
     }

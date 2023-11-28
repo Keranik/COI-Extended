@@ -54,6 +54,8 @@
     <Compile Remove="Workbench\COIE_ShipyardInspector.cs" />
     <Compile Remove="Workbench\COIE_ShipyardWindowController.cs" />
     <Compile Remove="Workbench\COIE_ShipyardWindowView.cs" />
+    <Compile Remove="Workbench\FluidChanges.cs" />
+    <Compile Remove="Workbench\Work.cs" />
     <Compile Remove="Workbench\Workbench.cs" />
   </ItemGroup>
   <ItemGroup>

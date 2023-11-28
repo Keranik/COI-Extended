@@ -10,7 +10,7 @@ internal class ChemicalPlant : IModData
 {
     public void RegisterData(ProtoRegistrator registrator)
     {
-        LocStr desc = Loc.Str(NewIDs.Machines.ChemicalPlantIII.ToString() + "__desc", "Performs variety of chemical recipes including processing of fluids and their packaging.", "description of a machine");
+        LocStr desc = Loc.Str(NewIDs.Machines.ChemicalPlantIII.ToString() + "__desc", "A chemical plant is an industrial facility designed for processing and producing chemicals on a large scale, often involving complex chemical reactions and operations.", "description of a machine");
         MachineProto machineProto = registrator.MachineProtoBuilder.Start("Chemical plant III", NewIDs.Machines.ChemicalPlantIII).Description(desc).SetCost(NewCosts.Machines.ChemicalPlantT3)
             .SetElectricityConsumption(400.Kw())
             .SetCategories(Ids.ToolbarCategories.MachinesOil)

@@ -74,7 +74,7 @@ public class DryDock : IModData
             int? maxTerrainHeight = new int?(0);
             return new LayoutTokenSpec(heightFrom, heightToExcl, constraint, null, null, maxTerrainHeight, null, null, null, false, false, 0);
         });
-        LocStr descShort = Loc.Str("Dry Dock", "Finally! You can build your own cargo ship!", "description of a cargo dock");
+        LocStr descShort = Loc.Str("Dry Dock", "A dry dock is a large, basin-like structure that can be drained of water to allow the construction, maintenance, or repair of ships and boats.", "description of a cargo dock");
         Proto.Str strings = Proto.CreateStr(NewIDs.Buildings.DryDock, "Cargo Ship: Drydock", descShort, null);
         
         EntityCosts cargoCosts = NewCosts.Buildings.DryDock.MapToEntityCosts(registrator);

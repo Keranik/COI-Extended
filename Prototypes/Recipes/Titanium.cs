@@ -33,6 +33,13 @@ internal class Titanium : IModData
                  .AddOutput(18, NewIDs.Products.TitaniumIngots)
                  .BuildAndAdd();
 
+        registrator.RecipeProtoBuilder.Start("Construction Parts V", NewIDs.Recipes.ConstructionPartsV, Ids.Machines.AssemblyRoboticT2)
+                .AddInput(8, Ids.Products.ConstructionParts4)
+                .AddInput(4, NewIDs.Products.TitaniumIngots)
+                .AddOutput(4, NewIDs.Products.ConstructionParts5)
+                .SetDuration(Duration.FromSec(20))
+                .BuildAndAdd();
+
 
     }
 

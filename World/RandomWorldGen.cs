@@ -16,6 +16,10 @@ using Mafi.Core.Fleet;
 using COIExtended.Extensions;
 using Mafi.Collections;
 using Mafi.Core;
+using System.Linq;
+using System.IO;
+using Mafi.Serialization;
+using static Mafi.Base.Assets.Base.Machines;
 
 namespace COIExtended.World
 {
@@ -34,12 +38,15 @@ namespace COIExtended.World
         {
             private readonly ProtosDb m_protosDb;
             private WorldMap m_map;
-            
+            private Dictionary<WorldMapLocId, int> m_distances;
+
             public COIEMapLinker(ProtosDb protosDb, WorldMap map)
             {
                 m_protosDb = protosDb;
                 m_map = map;
+                m_distances = new Dictionary<WorldMapLocId, int>();
             }
+
             public void SetEntityProto(EntityProto.ID entityId, WorldMapLocation location)
             {
                 WorldMapEntityProto protoToAssign = m_protosDb.GetOrThrow<WorldMapEntityProto>(entityId);
@@ -75,10 +82,10 @@ namespace COIExtended.World
                 float distanceFromHome, T1Distance, T2Distance, T3Distance, T4Distance;
 
                 // We can adjust these numbers at any point we just need a baseline to test
-                T1Distance = 1000;
-                T2Distance = 2000;
-                T3Distance = 3000;
-                T4Distance = 4000;
+                T1Distance = 1500;
+                T2Distance = 3500;
+                T3Distance = 5500;
+                T4Distance = 7500;
 
                 // Default to Tier 1 in case something goes awry
                 int tierToMake = 1;
@@ -104,7 +111,7 @@ namespace COIExtended.World
                         continue;
 
                     // Find out how far from home we are at this new location
-                    distanceFromHome = CalculateDistanceFromHome(mapLocation.Position);
+                    distanceFromHome = CalculateDistanceToHome(mapLocation.Id,m_map);
 
                     // Increase tier based on location
                     if (distanceFromHome > T1Distance) tierToMake++;
@@ -127,7 +134,7 @@ namespace COIExtended.World
 
                     if (generateEnemy)
                     {
-                        if (distanceFromHome < 1000)
+                        if (distanceFromHome < 2000)
                             continue;
                         else
                         GenerateEnemy(mapLocation, tierToMake);
@@ -155,25 +162,44 @@ namespace COIExtended.World
                 ProductProto CP3 = m_protosDb.GetOrThrow<ProductProto>(Ids.Products.ConstructionParts3);
                 ProductProto CP4 = m_protosDb.GetOrThrow<ProductProto>(Ids.Products.ConstructionParts4);
                 ProductProto Titanium = m_protosDb.GetOrThrow<ProductProto>(NewIDs.Products.TitaniumIngots);
+                ProductProto EL1 = m_protosDb.GetOrThrow<ProductProto>(Ids.Products.Electronics);
+                ProductProto EL2 = m_protosDb.GetOrThrow<ProductProto>(Ids.Products.Electronics2);
+                ProductProto EL3 = m_protosDb.GetOrThrow<ProductProto>(Ids.Products.Electronics3);
+                ProductProto EL4 = m_protosDb.GetOrThrow<ProductProto>(Ids.Products.Microchips);
                 switch (tier)
                 {
                     // For now I'm just going to give Construction Parts, we'll add the random choices once it works.
                     case 1:
-                        rewardsList = new AssetValue(CP1, adjustedQuantity.Quantity());
+                        rewardsList = new AssetValue(
+                                new ProductQuantity(CP1, adjustedQuantity.Quantity()),
+                                new ProductQuantity(EL1, adjustedQuantity.Quantity())
+                                );
                         break;
                     case 2:
-                        rewardsList = new AssetValue(CP2, adjustedQuantity.Quantity());
+                        rewardsList = new AssetValue(
+                                new ProductQuantity(CP2, adjustedQuantity.Quantity()),
+                                new ProductQuantity(EL2, adjustedQuantity.Quantity())
+                                );
                         break;
                     case 3:
-                        rewardsList = new AssetValue(CP3, adjustedQuantity.Quantity());
+                        rewardsList = new AssetValue(
+                                new ProductQuantity(CP3, adjustedQuantity.Quantity()),
+                                new ProductQuantity(EL3, adjustedQuantity.Quantity())
+                                );
                         break;
                         
                     case 4:
-                        rewardsList = new AssetValue(CP4, adjustedQuantity.Quantity());
+                        rewardsList = new AssetValue(
+                                new ProductQuantity(CP4, adjustedQuantity.Quantity()),
+                                new ProductQuantity(EL4, adjustedQuantity.Quantity())
+                                );
                         break;
                         
                     default: // Tier 5
-                        rewardsList = new AssetValue(Titanium, adjustedQuantity.Quantity());
+                        rewardsList = new AssetValue(
+                                new ProductQuantity(EL4, adjustedQuantity.Quantity()),
+                                new ProductQuantity(Titanium, adjustedQuantity.Quantity())
+                                );
                         break;
                 }
 
@@ -205,6 +231,12 @@ namespace COIExtended.World
                 {
                     case 1:
                         numOfScouts = 1;
+                        gunsT0 = UnityEngine.Random.Range(1, 3); 
+                        gunsT1 = UnityEngine.Random.Range(0, 1);
+                        gunsT2 = UnityEngine.Random.Range(0, 1);
+                        gunsT3 = UnityEngine.Random.Range(0, 1);
+                        armorsT1 = UnityEngine.Random.Range(0, 1);
+                        armorsT2 = UnityEngine.Random.Range(0, 1);
                         break;
                     case 2:
                         // 50% chance for each composition
@@ -217,6 +249,12 @@ namespace COIExtended.World
                         {
                             numOfScouts = 2;
                         }
+                        gunsT0 = UnityEngine.Random.Range(1, 3);
+                        gunsT1 = UnityEngine.Random.Range(0, 1);
+                        gunsT2 = UnityEngine.Random.Range(0, 1);
+                        gunsT3 = UnityEngine.Random.Range(0, 1);
+                        armorsT1 = UnityEngine.Random.Range(0, 2);
+                        armorsT2 = UnityEngine.Random.Range(0, 1);
                         break;
                     case 3:
                         // 50% chance for each composition
@@ -229,6 +267,12 @@ namespace COIExtended.World
                         {
                             numOfPatrols = 2;
                         }
+                        gunsT0 = UnityEngine.Random.Range(1, 3);
+                        gunsT1 = UnityEngine.Random.Range(0, 2);
+                        gunsT2 = UnityEngine.Random.Range(0, 1);
+                        gunsT3 = UnityEngine.Random.Range(0, 1);
+                        armorsT1 = UnityEngine.Random.Range(0, 2);
+                        armorsT2 = UnityEngine.Random.Range(0, 1);
                         break;
                     case 4:
                         // 50% chance for each composition
@@ -241,22 +285,28 @@ namespace COIExtended.World
                         {
                             numOfCruisers = 2;
                         }
+                        gunsT0 = UnityEngine.Random.Range(1, 3);
+                        gunsT1 = UnityEngine.Random.Range(0, 2);
+                        gunsT2 = UnityEngine.Random.Range(0, 2);
+                        gunsT3 = UnityEngine.Random.Range(0, 1);
+                        armorsT1 = UnityEngine.Random.Range(0, 2);
+                        armorsT2 = UnityEngine.Random.Range(0, 1);
                         break;
                     case 5:
                         numOfCruisers = 2;
                         numOfBattleships = 1;
+                        gunsT0 = UnityEngine.Random.Range(1, 3);
+                        gunsT1 = UnityEngine.Random.Range(0, 2);
+                        gunsT2 = UnityEngine.Random.Range(0, 2);
+                        gunsT3 = UnityEngine.Random.Range(0, 2);
+                        armorsT1 = UnityEngine.Random.Range(0, 2);
+                        armorsT2 = UnityEngine.Random.Range(0, 2);
                         break;
                     default:
                         throw new ArgumentException("Invalid tier");
                 }
 
-                // Randomly adjust but only slightly the amount of guns and armor each ship has
-                gunsT0 = UnityEngine.Random.Range(1, 3); // Example range
-                gunsT1 = UnityEngine.Random.Range(0, 2);
-                gunsT2 = UnityEngine.Random.Range(0, 2);
-                gunsT3 = UnityEngine.Random.Range(0, 2);
-                armorsT1 = UnityEngine.Random.Range(0, 2);
-                armorsT2 = UnityEngine.Random.Range(0, 2);
+               
 
                 // Adding ships to the fleet
                 for (int i = 0; i < numOfScouts; i++)
@@ -322,7 +372,10 @@ namespace COIExtended.World
                     if (locationValue == null || locationValue.Entity.HasValue || locationValue.EntityProto.HasValue)
                         continue;
 
-                    double distanceFromHome = CalculateDistanceFromHome(locationValue.Position);
+                    if (locationValue.Id == m_map.HomeLocation.Id)
+                        continue;
+
+                    double distanceFromHome = CalculateDistanceToHome(locationValue.Id, m_map);
                     if (distanceFromHome >= minDistanceFromHome && distanceFromHome <= maxDistanceFromHome)
                     {
                         suitableLocations.Add(locationValue);
@@ -359,7 +412,10 @@ namespace COIExtended.World
                     if (locationValue.Entity.HasValue || locationValue.EntityProto.HasValue)
                         continue;
 
-                    double distanceFromHome = CalculateDistanceFromHome(locationValue.Position);
+                    if (locationValue.Id == m_map.HomeLocation.Id)
+                        continue;
+
+                    double distanceFromHome = CalculateDistanceToHome(locationValue.Id, m_map);
                     if (distanceFromHome >= minDistanceFromHome && distanceFromHome <= maxDistanceFromHome)
                     {
                         Debug.Log($"Placing: {entityId} {techId}");
@@ -387,7 +443,10 @@ namespace COIExtended.World
                     if (locationValue.Entity.HasValue || locationValue.EntityProto.HasValue)
                         continue;
 
-                    double distanceFromHome = CalculateDistanceFromHome(locationValue.Position);
+                    if (locationValue.Id == m_map.HomeLocation.Id)
+                        continue;
+
+                    double distanceFromHome = CalculateDistanceToHome(locationValue.Id, m_map);
                     if (distanceFromHome >= minDistanceFromHome && distanceFromHome <= maxDistanceFromHome)
                     {
                         Debug.Log($"Placing: {technologyId}");
@@ -399,15 +458,59 @@ namespace COIExtended.World
                 Debug.Log($"No suitable location found for technology: {technologyId}");
             }
 
-
-            public float CalculateDistanceFromHome(Vector2i targetPosition)
+            public int CalculateDistanceToHome(WorldMapLocId startId, WorldMap homeMap)
             {
-                Vector2i homePosition = new Vector2i(1860, 2717);
-                int deltaX = targetPosition.X - homePosition.X;
-                int deltaY = targetPosition.Y - homePosition.Y;
-                float distance = (float)Math.Sqrt((deltaX * deltaX) + (deltaY * deltaY));
-                return distance;
+                // Initialize distances with maximum values
+                m_distances.Clear();
+
+                foreach (var locId in homeMap.LocationsDict.Keys)
+                {
+                    m_distances[locId] = int.MaxValue;
+                }
+                m_distances[startId] = 0;
+
+                // Priority queue for the locations to visit
+                var priorityQueue = new SortedSet<(int, WorldMapLocId)>();
+                priorityQueue.Add((0, startId));
+
+                while (priorityQueue.Any())
+                {
+                    var (currentDistance, currentLocId) = priorityQueue.Min;
+                    priorityQueue.Remove(priorityQueue.Min);
+
+                    // Stop if we reached the home location
+                    if (currentLocId == homeMap.HomeLocation.Id)
+                    {
+                        return currentDistance;
+                    }
+
+                    // Iterate over neighbors to find the shortest path
+                    foreach (var neighbor in homeMap.NeighborsOf(homeMap.LocationsDict[currentLocId]))
+                    {
+                        int alt = currentDistance + ComputeDistance(homeMap.LocationsDict[currentLocId], neighbor);
+                        if (alt < m_distances[neighbor.Id])
+                        {
+                            priorityQueue.Remove((m_distances[neighbor.Id], neighbor.Id));
+                            m_distances[neighbor.Id] = alt;
+                            priorityQueue.Add((alt, neighbor.Id));
+                        }
+                    }
+                }
+
+                // Return -1 if the home location is not reachable
+                return -1;
             }
+
+            private int ComputeDistance(WorldMapLocation loc1, WorldMapLocation loc2)
+            {
+                // Manually compute the Euclidean distance between two Vector2i points
+                int deltaX = loc1.Position.X - loc2.Position.X;
+                int deltaY = loc1.Position.Y - loc2.Position.Y;
+                return (int)Math.Sqrt(deltaX * deltaX + deltaY * deltaY);
+            }
+
+
+
 
         }
 
@@ -416,9 +519,9 @@ namespace COIExtended.World
         public NewMapGenerator(ProtosDb protosDb)
         {
             m_protosDb= protosDb;
-
         }
-public WorldMap CreateWorldMap()
+        
+        public WorldMap CreateWorldMap()
          {
             ProtosDb protosDb = m_protosDb;
             WorldMap worldMap = new WorldMap();
@@ -828,7 +931,6 @@ public WorldMap CreateWorldMap()
             worldMap.AddConnection(worldMapLocation99, worldMapLocation8);
             worldMap.AddConnection(worldMapLocation100, worldMapLocation4);
             worldMap.AddConnection(worldMapLocation101, worldMapLocation15);
-            
 
 
             Debug.Log("[COIE]: ADDING TO DICTIONARY"); // THIS NEVER CHANGES ITS FINE TO LEAVE IT
@@ -936,43 +1038,43 @@ public WorldMap CreateWorldMap()
 
             worldMap.SetHomeLocation(worldMapLocation1);
             COIEMapLinker linkMap = new COIEMapLinker(protosDb, worldMap);
-            linkMap.FindPlaceToPutEntityPair(NewIDs.World.OilRigCost1, Ids.Technology.OilDrilling, 0, 500);
-            linkMap.FindPlaceToPutEntity(NewIDs.World.Settlement1, 301, 1000);
-            linkMap.FindPlaceToPutEntityPair(NewIDs.World.CargoBuildProgressWreckCost1, Ids.Technology.CargoShip, 0, 1500);
-            linkMap.FindPlaceToPutEntity(NewIDs.World.Settlement2, 301, 2000);
-            linkMap.FindPlaceToPutEntity(NewIDs.World.SulfurMine, 500, 4000);
+            linkMap.FindPlaceToPutEntityPair(NewIDs.World.OilRigCost1, Ids.Technology.OilDrilling, 0, 1000);
+            linkMap.FindPlaceToPutEntity(NewIDs.World.Settlement1, 801, 2000);
+            linkMap.FindPlaceToPutEntityPair(NewIDs.World.CargoBuildProgressWreckCost1, Ids.Technology.CargoShip, 2000, 3500);
+            linkMap.FindPlaceToPutEntity(NewIDs.World.Settlement2, 1500, 3000);
+            linkMap.FindPlaceToPutEntity(NewIDs.World.SulfurMine, 1500, 4000);
             linkMap.FindPlaceToPutEntityPair(NewIDs.World.OilRigCost2, Ids.Technology.OilDrilling, 1500, 4000);
-            linkMap.FindPlaceToPutEntity(NewIDs.World.SettlementForFuel, 301, 1000);
-            linkMap.FindPlaceToPutEntity(NewIDs.World.CoalMine, 500, 3000);
+            linkMap.FindPlaceToPutEntity(NewIDs.World.SettlementForFuel, 801, 2000);
+            linkMap.FindPlaceToPutEntity(NewIDs.World.CoalMine, 1500, 3000);
             linkMap.FindPlaceToPutEntity(NewIDs.World.QuartzMine, 1500, 3000);
-            linkMap.FindPlaceToPutEntityPair(NewIDs.World.OilRigCost3, Ids.Technology.OilDrilling, 2000, 4000 );
-            linkMap.FindPlaceToPutEntity(NewIDs.World.WaterWell,500,3000);
-            linkMap.FindPlaceToPutEntityPair(NewIDs.World.CargoBuildProgressWreckCost2, Ids.Technology.CargoShip, 1500, 4000);
-            linkMap.FindPlaceToPutEntity(NewIDs.World.Settlement3, 1500, 3000);
-            linkMap.FindPlaceToPutEntityPair(NewIDs.World.UraniumMine, Ids.Technology.NuclearEnergy, 1500, 3000);
-            linkMap.FindPlaceToPutEntity(NewIDs.World.Settlement4, 1500, 4000);
-            linkMap.FindPlaceToPutEntity(NewIDs.World.CoalMine, 500, 2000);
-            linkMap.FindPlaceToPutEntity(NewIDs.World.QuartzMine, 500, 4000);
-            linkMap.FindPlaceToPutEntity(NewIDs.World.LimestoneMine, 500, 4000);
-            linkMap.FindPlaceToPutEntity(NewIDs.World.RockMine, 2000, 4000);
-            linkMap.FindPlaceToPutEntity(NewIDs.World.OilRigCost3, 500, 3000);
-            linkMap.FindPlaceToPutEntity(NewIDs.World.Settlement5, 2000, 3000);
-            linkMap.FindPlaceToPutEntity(NewIDs.World.SettlementForUranium, 500, 3000);
-            linkMap.FindPlaceToPutEntity(NewIDs.World.QuartzMine, 2000, 3000);
-            linkMap.FindPlaceToPutEntity(NewIDs.World.UraniumMine, 2000, 3000);
-            linkMap.FindPlaceToPutEntity(NewIDs.World.LimestoneMine,2000,3000);
+            linkMap.FindPlaceToPutEntityPair(NewIDs.World.OilRigCost3, Ids.Technology.OilDrilling, 2000, 5000);
+            linkMap.FindPlaceToPutEntity(NewIDs.World.WaterWell,2000, 5000);
+            linkMap.FindPlaceToPutEntityPair(NewIDs.World.CargoBuildProgressWreckCost2, Ids.Technology.CargoShip, 2500, 5000);
+            linkMap.FindPlaceToPutEntity(NewIDs.World.Settlement3, 2500, 4500);
+            linkMap.FindPlaceToPutEntityPair(NewIDs.World.UraniumMine, Ids.Technology.NuclearEnergy, 2000, 3000);
+            linkMap.FindPlaceToPutEntity(NewIDs.World.Settlement4, 3000, 5000);
+            linkMap.FindPlaceToPutEntity(NewIDs.World.CoalMine, 1500, 2500);
+            linkMap.FindPlaceToPutEntity(NewIDs.World.QuartzMine, 2000, 5000);
+            linkMap.FindPlaceToPutEntity(NewIDs.World.LimestoneMine, 2000, 5000);
+            linkMap.FindPlaceToPutEntity(NewIDs.World.RockMine, 2000, 5000);
+            linkMap.FindPlaceToPutEntity(NewIDs.World.OilRigCost3, 2000, 5000);
+            linkMap.FindPlaceToPutEntity(NewIDs.World.Settlement5, 3000, 6000);
+            linkMap.FindPlaceToPutEntity(NewIDs.World.SettlementForUranium, 2000, 5000);
+            linkMap.FindPlaceToPutEntity(NewIDs.World.QuartzMine, 2000, 5000);
+            linkMap.FindPlaceToPutEntity(NewIDs.World.UraniumMine, 2000, 5000);
+            linkMap.FindPlaceToPutEntity(NewIDs.World.LimestoneMine,2000, 5000);
             linkMap.FindPlaceToPutEntity(NewIDs.World.IlmeniteMine, 2500, 6000);
             linkMap.FindPlaceToPutEntity(NewIDs.World.SettlementForIlmenite, 2500, 6000);
-            linkMap.FindPlaceToPutTechnology(Ids.Technology.ShipRadar, 550, 1200);
-            linkMap.FindPlaceToPutTechnology(Ids.Technology.ShipRadarT2, 1201, 2500);
-            linkMap.FindPlaceToPutTechnology(Ids.Technology.WheatSeeds, 500, 1500);
-            linkMap.FindPlaceToPutTechnology(Ids.Technology.CornSeeds, 500, 1500);
-            linkMap.FindPlaceToPutTechnology(Ids.Technology.SoybeansSeeds, 500, 1500);
-            linkMap.FindPlaceToPutTechnology(Ids.Technology.Microchip, 1500, 2500);
-            linkMap.FindPlaceToPutTechnology(Ids.Technology.CanolaSeeds, 500, 1500);
-            linkMap.FindPlaceToPutTechnology(Ids.Technology.SugarCaneSeeds, 500, 1500);
-            linkMap.FindPlaceToPutTechnology(Ids.Technology.FruitSeeds, 500, 1500);
-            linkMap.FindPlaceToPutTechnology(Ids.Technology.PoppySeeds, 500, 1500);
+            linkMap.FindPlaceToPutTechnology(Ids.Technology.ShipRadar, 550, 2000);
+            linkMap.FindPlaceToPutTechnology(Ids.Technology.ShipRadarT2, 2000, 4000);
+            linkMap.FindPlaceToPutTechnology(Ids.Technology.WheatSeeds, 2000, 5000);
+            linkMap.FindPlaceToPutTechnology(Ids.Technology.CornSeeds, 2000, 5000);
+            linkMap.FindPlaceToPutTechnology(Ids.Technology.SoybeansSeeds, 2000, 5000);
+            linkMap.FindPlaceToPutTechnology(Ids.Technology.Microchip, 2000, 5000);
+            linkMap.FindPlaceToPutTechnology(Ids.Technology.CanolaSeeds, 2000, 5000);
+            linkMap.FindPlaceToPutTechnology(Ids.Technology.SugarCaneSeeds, 2000, 5000);
+            linkMap.FindPlaceToPutTechnology(Ids.Technology.FruitSeeds, 2000, 5000);
+            linkMap.FindPlaceToPutTechnology(Ids.Technology.PoppySeeds, 2000, 5000);
 
             linkMap.GenerateWorldEvents();
 

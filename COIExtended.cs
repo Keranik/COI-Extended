@@ -17,6 +17,9 @@ using COIExtended.Prototypes.Buildings;
 using Mafi.Core.Entities.Static.Layout;
 using COIExtended.UI;
 using UnityEngine.UIElements;
+using Mafi.Core.Fleet;
+using COIExtended.Patches;
+using Mafi.Core.Entities.Static;
 
 namespace COIExtended
 {
@@ -37,7 +40,7 @@ namespace COIExtended
 
         public void Initialize(DependencyResolver resolver, bool gameWasLoaded)
         {
-
+            
         }
        
         public void ChangeConfigs(Lyst<IConfig> configs)
@@ -72,7 +75,15 @@ namespace COIExtended
             registrator.RegisterData<Prototypes.Machines.ChemicalPlant>();
             registrator.RegisterData<Prototypes.Research.ChemicalPlantT3>();
             registrator.RegisterData<Prototypes.Machines.ScrubberT2>();
-            registrator.RegisterData<Prototypes.Research.PhotoOxidation>();            
+            registrator.RegisterData<Prototypes.Research.PhotoOxidation>();
+            registrator.RegisterData<Prototypes.Fleets.COIFleetData>();
+            registrator.RegisterData<Prototypes.Settlement.HardwareStoreModule>();
+            registrator.RegisterData<Prototypes.Edicts.HardwareConsumptionEdict>();
+            registrator.RegisterData<Prototypes.Research.HardwareStoreResearch>();            
+            registrator.RegisterData<Prototypes.Machines.FishingDock>();
+            registrator.RegisterData<Prototypes.Research.FishingDockResearch>();
+            registrator.RegisterData<Prototypes.Research.ConstructionPartsV>();
+
             registrator.RegisterData<Prototypes.World.Locations>();
             
         }
@@ -103,12 +114,31 @@ namespace COIExtended
 
     public static class NewIDs
     {
+        public partial class Edicts()
+        {
+            public static readonly Proto.ID HardwareStoreConsumptionIncrease = new Proto.ID("Edict_HardwareStoreConsumptionIncrease");
+            public static readonly Proto.ID HardwareStoreConsumptionIncreaseT2 = new Proto.ID("Edict_HardwareStoreConsumptionIncreaseT2");
+            public static readonly Proto.ID HardwareStoreConsumptionIncreaseT3 = new Proto.ID("Edict_HardwareStoreConsumptionIncreaseT3");
+        }
+        public partial class FoodTypes()
+        {
+            public static readonly Proto.ID FreshFish = new Proto.ID("FreshFishFood");
+        }
         public partial class Buildings()
         {
             public static readonly MachineID StorageFluidT5 = Ids.Machines.CreateId("StorageFluidT5");
             public static readonly MachineID StorageLooseT5 = Ids.Machines.CreateId("StorageLooseT5");
             public static readonly MachineID StorageUnitT5 = Ids.Machines.CreateId("StorageUnitT5");
             public static readonly LayoutEntityProto.ID DryDock = new LayoutEntityProto.ID("DryDock");
+            public static readonly StaticEntityProto.ID SettlementHardwareStore = new StaticEntityProto.ID("HardwareStore");
+        }
+        public partial class PopNeeds()
+        {
+            public static readonly Proto.ID HardwareStoreNeed = new Proto.ID("HardwareStoreNeed");
+        }
+        public partial class Fleets()
+        {
+            public static readonly FleetWeaponProto.ID FuelTankT2 = new FleetWeaponProto.ID("FuelTankT2");
         }
         public partial class World()
         {
@@ -147,11 +177,13 @@ namespace COIExtended
             public static readonly ResNodeID CargoShipResearch = Ids.Research.CreateId("CargoShipResearch");
             public static readonly ResNodeID ChemicalPlantT3 = Ids.Research.CreateId("ChemicalPlantT3");
             public static readonly ResNodeID PhotoOxidation = Ids.Research.CreateId("PhotoOxidation");
+            public static readonly ResNodeID UnlockFishingDock = Ids.Research.CreateId("UnlockFishingDock");
+            public static readonly ResNodeID UnlockHardwareStore = Ids.Research.CreateId("UnlockHardwareStore");
+            public static readonly ResNodeID UnlockConstructionPartsV = Ids.Research.CreateId("UnlockConstructionPartsV");
         }
 
         public partial class Machines
-        {
-            
+        {            
             public static readonly MachineID LargeLiquidDump = Ids.Machines.CreateId("LargeLiquidDump");
             public static readonly MachineID LandWaterPumpT2 = Ids.Machines.CreateId("LandWaterPumpT2");
             public static readonly MachineID OceanWaterPumpT2 = Ids.Machines.CreateId("OceanWaterPumpT2");
@@ -160,7 +192,7 @@ namespace COIExtended
             public static readonly MachineID SettlingTankII = Ids.Machines.CreateId("SettlingTankII");
             public static readonly MachineID ChemicalPlantIII = Ids.Machines.CreateId("ChemicalPlantIII");
             public static readonly MachineID ScrubberT2 = Ids.Machines.CreateId("ScrubberT2");
-
+            public static readonly MachineID FishingDock = Ids.Machines.CreateId("FishingDock");
         }
 
         public partial class Recipes
@@ -197,7 +229,6 @@ namespace COIExtended
             public static readonly RecipeID NitricAcidGoldSettlingII = Ids.Recipes.CreateId("NitricAcidGoldSettlingII");
             public static readonly RecipeID NitricAcidUraniumSettlingII = Ids.Recipes.CreateId("NitricAcidUraniumSettlingII");
             public static readonly RecipeID NitricAcidHFSettlingII = Ids.Recipes.CreateId("NitricAcidHFSettlingII");
-            // Chemical Plant 3
             public static readonly RecipeID FertilizerProductionT3 = Ids.Recipes.CreateId("FertilizerProductionT3");
             public static readonly RecipeID AmmoniaSynthesisT3 = Ids.Recipes.CreateId("AmmoniaSynthesisT3");
             public static readonly RecipeID FuelGasSynthesisT3 = Ids.Recipes.CreateId("FuelGasSynthesisT3");
@@ -207,9 +238,9 @@ namespace COIExtended
             public static readonly RecipeID MorphineProductionT3 = Ids.Recipes.CreateId("MorphineProductionT3");
             public static readonly RecipeID TitaniumDioxide = Ids.Recipes.CreateId("TitaniumDioxide");
             public static readonly RecipeID PhotoOxiScrub = Ids.Recipes.CreateId("PhotoOxiScrub");
-
-
-
+            public static readonly RecipeID FishingDock = Ids.Recipes.CreateId("FishingDock");
+            public static readonly RecipeID FishingDockNoBait = Ids.Recipes.CreateId("FishingDockNoBait");
+            public static readonly RecipeID ConstructionPartsV = Ids.Recipes.CreateId("ConstructionPartsV");
         }
 
         public partial class Transports
@@ -234,11 +265,9 @@ namespace COIExtended
             // New Unit Products
             public static readonly ProductID ImpureTitanium = Ids.Products.CreateId("ImpureTitanium");
             public static readonly ProductID TitaniumIngots = Ids.Products.CreateId("TitaniumIngots");
-
-
-            
- 
-
+            public static readonly ProductID FreshFish = Ids.Products.CreateId("FreshFish");
+            public static readonly ProductID ConstructionParts5 = Ids.Products.CreateId("ConstructionParts5");
+            public static readonly AllowProductDiscountInUpgrade ConstructionParts5InUpgrade = new AllowProductDiscountInUpgrade();
         }
 
         public partial class Virtual
@@ -264,8 +293,8 @@ namespace COIExtended
             public static EntityCostsTpl OceanWaterPumpTallT2 => Build.CP2(75).Workers(2).MaintenanceT1(8);
             public static EntityCostsTpl ChemicalPlantT3 => Build.CP4(60).Workers(14).MaintenanceT3(2);
             public static EntityCostsTpl ScrubberT2 => Build.CP4(60).Workers(14).MaintenanceT3(4);
-
             public static EntityCostsTpl LandWaterPumpT2 => Build.CP2(60).Workers(4).MaintenanceT2(2).Priority(8);
+            public static EntityCostsTpl FishingDock => Build.CP3(30).Workers(20).MaintenanceT2(4);
         }
 
         public static class Rockets

@@ -15,7 +15,7 @@ internal class ScrubberT2 : IModData
 {
    public void RegisterData(ProtoRegistrator registrator)
         {
-            LocStr1 locStr = Loc.Str1(NewIDs.Machines.ScrubberT2.ToString() + "__desc", "Filters {0}% of pollutants from hot exhaust gasses by extracting useful resources.", "{0} is a number, used like for instance '75%'");
+            LocStr1 locStr = Loc.Str1(NewIDs.Machines.ScrubberT2.ToString() + "__desc", "A photocatalytic machine is a device that utilizes light-activated catalysts to initiate and accelerate chemical reactions, often for environmental applications like air and water purification.", "{0} is a number, used like for instance '75%'");
             MachineProto machine = registrator.MachineProtoBuilder.Start("Exhaust Scrubber II", NewIDs.Machines.ScrubberT2).Description(LocalizationManager.CreateAlreadyLocalizedStr(NewIDs.Machines.ScrubberT2.ToString() + "_formatted", locStr.Format(75.ToString()).Value)).SetCost(NewCosts.Machines.ScrubberT2)
                 .SetElectricityConsumption(400.Kw())
                 .SetCategories(Ids.ToolbarCategories.Waste)
@@ -27,11 +27,11 @@ internal class ScrubberT2 : IModData
                 .EnableSemiInstancedRendering()
                 .BuildAndAdd();
             registrator.RecipeProtoBuilder.Start("Photocatalytic Oxidation", NewIDs.Recipes.PhotoOxiScrub, machine)
-            .AddInput(45, Ids.Products.Exhaust, "D")
-            .AddInput(4, NewIDs.Products.TitaniumDioxide, "B")
-            .SetDuration(6.Seconds())
-            .AddOutput(30, Ids.Products.CarbonDioxide, "X")
-            .AddOutput(2, Ids.Products.ToxicSlurry, "Y")
+            .AddInput(75, Ids.Products.Exhaust, "D")
+            .AddInput(6, NewIDs.Products.TitaniumDioxide, "B")
+            .SetDuration(10.Seconds())
+            .AddOutput(48, Ids.Products.CarbonDioxide, "X")
+            .AddOutput(3, Ids.Products.ToxicSlurry, "Y")
             .BuildAndAdd();
         }
     

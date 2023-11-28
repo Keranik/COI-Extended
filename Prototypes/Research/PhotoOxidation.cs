@@ -14,7 +14,7 @@ internal class PhotoOxidation : IModData
                 .AddMachineToUnlock(NewIDs.Machines.ScrubberT2, false)
                 .AddRecipeToUnlock(NewIDs.Recipes.PhotoOxiScrub, false)
                 .SetCosts(new ResearchCostsTpl(69))
-                .SetGridPosition(new Vector2i(128, 44))
+                .SetGridPosition(new Vector2i(124, 42))
                 .AddParents(registrator.PrototypesDb.GetOrThrow<ResearchNodeProto>(NewIDs.Research.ChemicalPlantT3))
                 .BuildAndAdd();
     }

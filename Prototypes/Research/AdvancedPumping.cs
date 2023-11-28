@@ -10,7 +10,7 @@ internal class AdvancedPumping : IModData
     {
                 registrator.ResearchNodeProtoBuilder
                 .Start("Advanced Pumping", NewIDs.Research.AdvancedPumping)
-                .Description("The next generation of pumping!")
+                .Description("The innovative study and development of pump technology and systems, focusing on enhancing efficiency, reliability, and application in various fields.")
                 .AddMachineToUnlock(NewIDs.Machines.OceanWaterPumpT2, false)
                 .AddMachineToUnlock(NewIDs.Machines.OceanWaterPumpTallT2, false)
                 .AddMachineToUnlock(NewIDs.Machines.LandWaterPumpT2, false)
