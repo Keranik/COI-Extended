@@ -10,17 +10,19 @@ Captain of Industry: Extended is a modification for Captain of Industry that add
 
 165 New Recipes  
 
-35 New Products 
+40 New Products 
 
-Bigger Storages - No throughput limits and more I/O
+Tier 5 Storages - No throughput limits and more I/O
+
+"Mega" Vehicle Version for Countable Product
 
 Faster Transports - Tier 4 Pipes and Belts
 
 Storage of (almost) all items
 
-New Battery Network System - Build three sizes of battery bank to build a back-up battery network
+New Re-Worked Battery Network System - Build three sizes of power exchanger to build a back-up battery network
 
-New Random Gen World Map - 150+ locations, tougher enemies, more of trades, contracts, loot, mines, settlements
+New Random Gen World Map Options - Up to 500+ locations, more of trades, contracts, loot, mines, settlements
 
 Improved Cargo Ship logic for reliable calculations
 
