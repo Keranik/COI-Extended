@@ -29,6 +29,7 @@ The **COI: Extended** mod suite enhances *Captain of Industry* with tools for cu
 - **Camera**: Free movement through terrain/objects.
 - **Designations**: Unlimited size for terrain and tower designations.
 - **Visuals**: Disable clouds, fog, or weather rendering.
+- **Vehicles**: Mass Vehicle Upgrader.
 - **Note**: Use `F9` to open the Tweaks menu.
 
 ### StoragePlus Mod
