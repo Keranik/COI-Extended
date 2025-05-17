@@ -70,14 +70,14 @@ The **COI: Extended** mod suite enhances *Captain of Industry* with tools for cu
 
 # Reporting Issues
 ## How do I report an issue?
-- Click **Issues* at the top of the page, and choose a title that summarizes your issue.
-- Look for your latest game log file at `%APPDATA%\Captain of Industry\Logs` and attach it to the report.
-- If possible, find the saved game file you are having trouble with in `%APPDATA%\Captain of Industry\Saves` and attach it to the report.
-- In the body of your report, be as descriptive as possible with your issue and include the following:
+- Click **Issues** at the top of the page, and choose a title that summarizes your issue.
+- Look for your latest game **log file** at `%APPDATA%\Captain of Industry\Logs` and attach it to the report.
+- If possible, find the **saved game** file you are having trouble with in `%APPDATA%\Captain of Industry\Saves` and attach it to the report.
+- In the body of your report, **be as descriptive as possible** with your issue and include the following:
 -- What behavior are you experiencing?
 -- What behavior do you expect to happen?
 -- How can one reproduce the behavior you are experiencing?
-- Ensuring you follow these simple steps will help you and the mod author fix the problem as soon as possible.
+- Ensuring you follow these simple steps will **help you** and the mod author **fix the problem** as soon as possible.
 
 # Thank you for your interest in Captain of Industry: Extended
 ## Support the mod on Patreon at patreon.com/keranik
