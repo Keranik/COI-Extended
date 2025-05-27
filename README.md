@@ -138,6 +138,6 @@ The **COI: Extended** mod suite enhances *Captain of Industry* with tools for cu
 - Ensuring you follow these simple steps will help you and the mod author fix the problem as soon as possible.
 
 ## Thank you for your interest in Captain of Industry: Extended
-# Support the mod on Patreon at patreon.com/keranik
-# No Patreon? Donate directly at paypal.me/undiscoveredent
+### Support the mod on Patreon at patreon.com/keranik
+### No Patreon? Donate directly at paypal.me/undiscoveredent
 
