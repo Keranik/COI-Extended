@@ -92,11 +92,30 @@ The **COI: Extended** mod suite enhances *Captain of Industry* with tools for cu
 
 ### Difficulty Settings Mod
 
-- **Difficulty**: Adjust settings from -90% to +500% for more flexibility.
+- **Difficulty**:
+  - Adjust settings from -90% to +500% for more flexibility.
 
 ### Solar Extended Mod
 
-- **Solar Panels**: Quarter-size variants for all solar panel types.
+- **Solar Panels**:
+  - Quarter-size variants for all solar panel types.
+
+### World Extended Mod
+
+- **Random World Gen**:
+  - All new Random World gen with customizable settings.
+  - New Iron/Copper/Gold mine for the World Map.
+  - Dozen new ship parts including Armor4/5 and Guns 4/5 as well as ShipRadar3 upgrade.
+
+### Logistics Extended Mod
+- **Transports**:
+  - Buff T1 Molten channel to 300/60 and introduces new T2 Molten Channel with 600/60 throughput.
+  - Introduce new T4 Flat/Unit and Loose conveyor belts.
+  - Reduce maintenance and power consumption on all belts by about 50%.
+  - Added throughput counter display for flat, loose, molten and fluid transports.
+
+- **Trains**:
+  - Introduce new Hydrogen Locomotive and Fuel Station
 
 ## Usage
 - **Cheats**: Access via Cheats Window (Gameplay, Resources, Ships, Terrain, Vehicles tabs) with `F8`.
@@ -105,6 +124,8 @@ The **COI: Extended** mod suite enhances *Captain of Industry* with tools for cu
 - **ItemSink**: Place sinks/sources in-game.
 - **Difficulty**: Modify sliders in settings.
 - **Solar**: Find quarter-size panels in build menu.
+- **World**: Adjust map settings on New Game Menu.
+- **Logistics**: Research nodes to unlock new things.
 
 ## Notes
 - **Vehicle Editor**: Experimental and still WIP, back up saves before use.
