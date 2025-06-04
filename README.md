@@ -21,6 +21,7 @@ The **COI: Extended** mod suite enhances *Captain of Industry* with tools for cu
   - Instantly fill maintenance reserves
   - Research costs are free
   - Instantly finish current/all research
+  - Instantly finish all repeatable research
   - Infinite Focus points to assign
   - Focus multiplier for additional focus points
  
