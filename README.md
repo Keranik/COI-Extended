@@ -133,10 +133,11 @@ The **COI: Extended** mod suite enhances *Captain of Industry* with tools for cu
 
 # Install 
 ## How do I install the mod?
-- **Download** latest release `COIExtendedv-xxx.zip `on the Releases page at https://coie.keranik.com/releases
-- Open **Windows Explorer** and paste to it `%APPDATA%\Captain of Industry\Mods`
-- Open **COIExtended-xxx.zip** and extract/copy desired mods to **Mods** directory.
-- Open game and **Enable Mods** in the **Settings** menu, then restart game.
+1) **Download** latest release `COIExtendedv-xxx.zip `on the Releases page at https://coie.keranik.com/releases
+2) Open **Windows Explorer** and paste the following to the Address Bar: `%APPDATA%\Captain of Industry\Mods`
+3) If directory does not exist, instead paste `%APPDATA%\Captain of Industry` and then create `Mods` folder.
+4) Open **COIExtended-xxx.zip** and extract/copy desired mods to **Mods** directory.
+5) Open game and **Enable Mods** in the **Settings** menu, then restart game.
 
 ## How do I add the mod to a saved game?
 - **After** properly installing mods, start the game and choose **Load** at the main menu.
