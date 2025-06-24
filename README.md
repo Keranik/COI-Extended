@@ -161,3 +161,10 @@ The **COI: Extended** mod suite enhances *Captain of Industry* with tools for cu
 ### Support the mod on Patreon at patreon.com/keranik
 ### No Patreon? Donate directly at paypal.me/undiscoveredent
 
+# Mod Notice for COIExtended
+
+All rights reserved to Undiscovered Entertainment for the original code, concepts, and assets created for this mod, except where otherwise noted. No part of this mod’s original content may be used, modified, or distributed without express written permission from Undiscovered Entertainment.
+
+All *Captain of Industry* related content, including but not limited to game assets, code, and intellectual property, is copyright © MaFi Games and used under the terms of their End-User License Agreement and modding policy. This mod is an unofficial, non-commercial fan project and is not endorsed by MaFi Games.
+
+This mod is provided free of charge. Optional donations are appreciated but do not grant additional access or rights to the mod. For inquiries, contact Keranik on Captain of Industry's Discord server.
