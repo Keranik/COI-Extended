@@ -78,7 +78,7 @@ The **COI: Extended** mod suite enhances *Captain of Industry* with tools for cu
   - Forestry Tower now shows the amount of trees planted in the area, the amount of designations, and the maximum amount of wood the area will produce.
 
 - **Speed Controls*::
-  - Tired of only speeds 1-3? Tweaks mod introduces speeds from 1-15 and an additional advanced option to set your speed as high as your PC will handle.
+  - Tired of only speeds 1-3? Tweaks mod introduces speeds from 1-15!
 
 ### StoragePlus Mod
 
