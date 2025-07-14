@@ -12,6 +12,7 @@ The **COI: Extended** mod suite enhances *Captain of Industry* with tools for cu
   - Change total Unity Cap to any desired amount
   - Disable needs such as Electricity, Food, Water, Computing
   - Instantly fill all food markets and animal farms.
+  - No Disease cheat
     
 - **Economy**:
   - Instant Build/Research
@@ -53,11 +54,14 @@ The **COI: Extended** mod suite enhances *Captain of Industry* with tools for cu
   - Instantly Unload/Repair main Battleship
   - Finish current navigation for Battleship instantly
   - Reveal/Scan/Visit/Defeat all locations as four separate options.
-  - Add any amount of any product you want to your shipyard.
+  - Add any amount of any product you want to your shipyard (with fallback to storage if incompatible).
+  - Train multiplier capacity (adjusts wagon capacity and station throughput).
+  - Instant delete storages (automatically clears contents on deconstruction).
 
 - **Vehicle Prototype Editor**:
   - Customize vehicle Prototypes to make your own custom vehicles!
   - Save/Load custom prototypes on and from vehicles to repeat a desired design!
+  - Editable Acceleration and Braking Distance fields with tooltips.
   
 ### Tweaks Mod
 
@@ -68,6 +72,7 @@ The **COI: Extended** mod suite enhances *Captain of Industry* with tools for cu
   - Disable Cloud Rendering
   - Disable Fog Rendering
   - Disable Weather Rendering
+  - Change train multipliers.
 
 - **Vehicles Management Overview**:
   - Vehicles management overview allows you to quickly see all of your vehicles at a glance.
@@ -77,7 +82,7 @@ The **COI: Extended** mod suite enhances *Captain of Industry* with tools for cu
   - Mine Tower now allows you to set excavator priority individually for all assigned excavators, or all at once.
   - Forestry Tower now shows the amount of trees planted in the area, the amount of designations, and the maximum amount of wood the area will produce.
 
-- **Speed Controls*::
+- **Speed Controls**:
   - Tired of only speeds 1-3? Tweaks mod introduces speeds from 1-15!
 
 ### StoragePlus Mod
@@ -86,6 +91,7 @@ The **COI: Extended** mod suite enhances *Captain of Industry* with tools for cu
   - Remove throughput limits on all storages
   - Allow edit of storage capacity with option to make the default capacity.
   - Allow storage of any product that the storage supports (Steam, Exhaust, etc)
+  - Support for belt output slider.
 
 ### ItemSink Mod
 
@@ -107,6 +113,12 @@ The **COI: Extended** mod suite enhances *Captain of Industry* with tools for cu
   - All new Random World gen with customizable settings.
   - New Iron/Copper/Gold mine for the World Map.
   - Dozen new ship parts including Armor4/5 and Guns 4/5 as well as ShipRadar3 upgrade.
+  - Initial ship fuel capacity increased to 35.
+  - Cargo Ship Drydock research available early.
+  - Option for Static (Default) World Map with custom logic.
+  - Estimated Location Count in Map Generation settings.
+  - Option to auto-select location count based on parameters.
+  - Mine multiplier functionality.
 
 ### Logistics Extended Mod
 - **Transports**:
@@ -114,9 +126,18 @@ The **COI: Extended** mod suite enhances *Captain of Industry* with tools for cu
   - Introduce new T4 Flat/Unit and Loose conveyor belts.
   - Reduce maintenance and power consumption on all belts by about 50%.
   - Added throughput counter display for flat, loose, molten and fluid transports.
+  - Reduced train build time.
+  - Small balancer versions (4 I/O slots).
+  - Large balancer versions (12 I/O slots).
+  - Food Market I supports second food selection.
+  - Food Market II supports third food selection and 50% increased buffer.
+  - Liquid Dump recipes increased by 4x.
+  - Stacker throughput increased to 600/60.
 
 - **Overclocking**:
   - Overclock machines or underclock them to save on workers and maintenance!
+  - Supports speeds from 10% to 300%.
+  - Affects worker costs, maintenance costs, electricity costs and computing consumption.
 
 ## Usage
 - **Cheats**: Access via Cheats Window (Gameplay, Resources, Ships, Terrain, Vehicles tabs) with `F8`.
