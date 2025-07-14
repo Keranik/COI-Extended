@@ -7,54 +7,52 @@ The **COI: Extended** mod suite enhances *Captain of Industry* with tools for cu
 
 ### Cheats Mod
 - **Settlement**:
-  - Change population to any desired amount.
-  - Change total Unity to any desired amount.
-  - Change total Unity Cap to any desired amount.
-  - Disable needs such as Electricity, Food, Water, Computing.
-  - No Disease Effects cheat.
+  - Change population to any desired amount
+  - Change total Unity to any desired amount
+  - Change total Unity Cap to any desired amount
+  - Disable needs such as Electricity, Food, Water, Computing
   - Instantly fill all food markets and animal farms.
+  - No Disease cheat
     
 - **Economy**:
-  - Instant Build/Research.
-  - No Construction Costs.
-  - Free Monthly Power/Unity/Computing.
-  - No Maintenance Mode.
-  - Instantly fill maintenance reserves.
-  - Research costs are free.
-  - Instantly finish current/all research.
-  - Instantly finish all repeatable research.
-  - Infinite Focus points to assign.
-  - Focus multiplier for additional focus points.
-  - Creative Mode (one-time action: maxes Unity/Power/Computing, unlocks all tech, explores map, disables maintenance/fuel/weather, fills reserves, adds ships, etc.).
+  - Instant Build/Research
+  - No Construction Costs
+  - Free Monthly Power/Unity/Computing
+  - No Maintenance Mode
+  - Instantly fill maintenance reserves
+  - Research costs are free
+  - Instantly finish current/all research
+  - Instantly finish all repeatable research
+  - Infinite Focus points to assign
+  - Focus multiplier for additional focus points
  
 - **Environment**:
-  - No Air/Water/Ship/Vehicle/Train Pollution settings.
-  - No Waste Generation.
-  - No Wastewater/Biowaste Generation/Production.
-  - Unlimited Water Reserves.
-  - Unlimited Oil Reserves.
-  - Asteroid Spawner (spawn any asteroid with customizable materials, ratio, and radius).
+  - No Air/Water/Ship/Vehicle/Train Pollution settings
+  - No Waste Generation
+  - No Wastewater/Biowaste Generation
+  - Unlimited Water Reserves
+  - Unlimited Oil Reserves
+  - Asteroid Spawner (spawn any asteroid)
  
 - **Terrain Controls**:
-  - Instantly process all mining designations.
-  - Instantly process all dumping designations.
-  - Instantly place/clear all pending surfaces.
-  - Change terrain at any designation to whatever you want.
-  - Instantly Plant/Remove trees with customizable Tree Spacing.
+  - Instantly process all mining designations
+  - Instantly process all dumping designations
+  - Instantly place/clear all pending surfaces
+  - Change terrain at any designation to whatever you want
+  - Instantly Plant/Remove trees with customizable Tree Spacing
   - Adjust Weather simulation by changing Rain and Sun Intensity.
   - Lock weather permanently to a setting of your choice.
-  - Reset all weather to defaults.
-  - Disable or re-enable weather rendering in its entirety (fog, clouds, effects).
+  - Disable or re-enable weather rendering in its entirety.
 
 - **Exploration & Logistics**:
-  - Cargo ships complete contracts instantly.
-  - Disable all fuel consumption.
-  - Fast ore sorting.
-  - Change vehicle limit.
-  - Give vehicles extra capacity.
-  - Change cargo ship limit.
-  - Instantly Unload/Repair main Battleship.
-  - Finish current navigation for Battleship instantly.
+  - Cargo ships complete contracts instantly
+  - Disable all fuel consumption
+  - Fast ore sorting
+  - Change vehicle limit
+  - Give vehicles extra capacity
+  - Change cargo ship limit
+  - Instantly Unload/Repair main Battleship
+  - Finish current navigation for Battleship instantly
   - Reveal/Scan/Visit/Defeat all locations as four separate options.
   - Add any amount of any product you want to your shipyard (with fallback to storage if incompatible).
   - Train multiplier capacity (adjusts wagon capacity and station throughput).
@@ -141,18 +139,8 @@ The **COI: Extended** mod suite enhances *Captain of Industry* with tools for cu
   - Supports speeds from 10% to 300%.
   - Affects worker costs, maintenance costs, electricity costs and computing consumption.
 
-### Structures Extended Mod (New!)
-- **New Structures and Variants**:
-  - Introduces expanded building options for greater flexibility in base design.
-  - New variants of core structures like balancers (e.g., compact or oversized versions).
-  - Enhanced markets with additional slots for food/products and increased buffers.
-  - Upgraded transport structures (e.g., high-throughput conveyors, channels, and dump recipes).
-  - Maintenance and power reductions on select structures for efficiency.
-  - Throughput displays on key logistics buildings.
-  - Experimental overclocking for machines (10-300% speed adjustments affecting costs).
-
 ## Usage
-- **Cheats**: Access via Cheats Window (Gameplay, Resources, Ships, Terrain, Vehicles) with `F8`.
+- **Cheats**: Access via Cheats Window (Gameplay, Resources, Ships, Terrain, Vehicles tabs) with `F8`.
 - **Tweaks**: Use Tweaks Window for toggles with `F9`.
 - **StoragePlus**: Adjust storage via new UI controls.
 - **ItemSink**: Place sinks/sources in-game.
@@ -160,11 +148,9 @@ The **COI: Extended** mod suite enhances *Captain of Industry* with tools for cu
 - **Solar**: Find quarter-size panels in build menu.
 - **World**: Adjust map settings on New Game Menu.
 - **Logistics**: Research nodes to unlock new things.
-- **Structures**: Unlock and build new variants via research or build menu.
 
 ## Notes
 - **Vehicle Editor**: Experimental and still WIP, back up saves before use.
-- **Structures Extended Mod**: This is a new addition—test thoroughly and report issues, as it expands on logistics and building mechanics.
 
 # Install 
 ## How do I install the mod?
@@ -195,3 +181,13 @@ The **COI: Extended** mod suite enhances *Captain of Industry* with tools for cu
 ## Thank you for your interest in Captain of Industry: Extended
 ### Support the mod on Patreon at patreon.com/keranik
 ### No Patreon? Donate directly at paypal.me/undiscoveredent
+
+# Mod Notice for COIExtended
+
+All rights reserved to Undiscovered Entertainment for the original code, concepts, and assets created for this mod, except where otherwise noted. No part of this mod’s original content may be used, modified, or distributed without express written permission from Undiscovered Entertainment.
+
+All *Captain of Industry* related content, including but not limited to game assets, code, and intellectual property, is copyright © MaFi Games and used under the terms of their End-User License Agreement and modding policy. This mod is an unofficial, non-commercial fan project and is not endorsed by MaFi Games.
+
+This mod is provided free of charge. Optional donations are appreciated but do not grant additional access or rights to the mod. For inquiries, contact Keranik on Captain of Industry's Discord server.
+
+Can you update this to include news about the structures mod and what it adds as well as verify that all the cheats in the associated files are listed in the readme too
