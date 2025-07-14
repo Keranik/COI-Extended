@@ -115,8 +115,8 @@ The **COI: Extended** mod suite enhances *Captain of Industry* with tools for cu
   - Reduce maintenance and power consumption on all belts by about 50%.
   - Added throughput counter display for flat, loose, molten and fluid transports.
 
-- **Trains**:
-  - Introduce new Hydrogen Locomotive and Fuel Station
+- **Overclocking**:
+  - Overclock machines or underclock them to save on workers and maintenance!
 
 ## Usage
 - **Cheats**: Access via Cheats Window (Gameplay, Resources, Ships, Terrain, Vehicles tabs) with `F8`.
