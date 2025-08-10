@@ -190,4 +190,3 @@ All *Captain of Industry* related content, including but not limited to game ass
 
 This mod is provided free of charge. Optional donations are appreciated but do not grant additional access or rights to the mod. For inquiries, contact Keranik on Captain of Industry's Discord server.
 
-Can you update this to include news about the structures mod and what it adds as well as verify that all the cheats in the associated files are listed in the readme too
