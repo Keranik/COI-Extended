@@ -1,192 +1,223 @@
-# COI: Extended Mods - Feature Summary  
+# COI: Extended (COIExtended)
 
-## Overview
-The **COI: Extended** mod suite enhances *Captain of Industry* with tools for customization, cheats, and quality-of-life improvements. Below is a concise summary of what each mod does.
+COI: Extended unifies former gameplay overhaul modlets (Logistics, World, Solar, Structures + expanding Agriculture/Fishing) into a single **Unified Core** while preserving a small set of **standalone, opt‑in quality‑of‑life / cheat / utility mods**.  
+Choose ONE primary path per save: Unified Core (new games), Updated Legacy bundle (finish old overhaul saves), or StandaloneONLY (QoL/cheats only).
 
-## Mod Features
+> QUICK PICK:  
+> • Starting a NEW game? Use the Unified Core.  
+> • Finishing an existing overhaul save? Use the Updated Legacy bundle.  
+> • Only ever used QoL / cheats? Use StandaloneONLY.  
 
-### Cheats Mod
-- **Settlement**:
-  - Change population to any desired amount
-  - Change total Unity to any desired amount
-  - Change total Unity Cap to any desired amount
-  - Disable needs such as Electricity, Food, Water, Computing
-  - Instantly fill all food markets and animal farms.
-  - No Disease cheat
-    
-- **Economy**:
-  - Instant Build/Research
-  - No Construction Costs
-  - Free Monthly Power/Unity/Computing
-  - No Maintenance Mode
-  - Instantly fill maintenance reserves
-  - Research costs are free
-  - Instantly finish current/all research
-  - Instantly finish all repeatable research
-  - Infinite Focus points to assign
-  - Focus multiplier for additional focus points
- 
-- **Environment**:
-  - No Air/Water/Ship/Vehicle/Train Pollution settings
-  - No Waste Generation
-  - No Wastewater/Biowaste Generation
-  - Unlimited Water Reserves
-  - Unlimited Oil Reserves
-  - Asteroid Spawner (spawn any asteroid)
- 
-- **Terrain Controls**:
-  - Instantly process all mining designations
-  - Instantly process all dumping designations
-  - Instantly place/clear all pending surfaces
-  - Change terrain at any designation to whatever you want
-  - Instantly Plant/Remove trees with customizable Tree Spacing
-  - Adjust Weather simulation by changing Rain and Sun Intensity.
-  - Lock weather permanently to a setting of your choice.
-  - Disable or re-enable weather rendering in its entirety.
+---
 
-- **Exploration & Logistics**:
-  - Cargo ships complete contracts instantly
-  - Disable all fuel consumption
-  - Fast ore sorting
-  - Change vehicle limit
-  - Give vehicles extra capacity
-  - Change cargo ship limit
-  - Instantly Unload/Repair main Battleship
-  - Finish current navigation for Battleship instantly
-  - Reveal/Scan/Visit/Defeat all locations as four separate options.
-  - Add any amount of any product you want to your shipyard (with fallback to storage if incompatible).
-  - Train multiplier capacity (adjusts wagon capacity and station throughput).
-  - Instant delete storages (automatically clears contents on deconstruction).
+## 🧭 Table of Contents
+1. What Is COI: Extended?
+2. Choosing the Right Download
+3. Unified Core vs Legacy vs Standalone
+4. Feature Overview (By Module)
+5. Installation & Upgrading
+6. Using the Mods (Short How‑To)
+7. Reporting Issues
+8. Contributing & Requests
+9. FAQ
+10. Chinese Quick Guide (简体中文速览)
+11. License / Attribution / Support
+12. Changelog Pointer
 
-- **Vehicle Prototype Editor**:
-  - Customize vehicle Prototypes to make your own custom vehicles!
-  - Save/Load custom prototypes on and from vehicles to repeat a desired design!
-  - Editable Acceleration and Braking Distance fields with tooltips.
-  
-### Tweaks Mod
+---
 
-- **Gameplay Tweaks**:
-  - Free Camera Mode
-  - Unlimited mining designation sizes
-  - Unlimited tower area
-  - Disable Cloud Rendering
-  - Disable Fog Rendering
-  - Disable Weather Rendering
-  - Change train multipliers.
+## 1. What Is COI: Extended?
 
-- **Vehicles Management Overview**:
-  - Vehicles management overview allows you to quickly see all of your vehicles at a glance.
-  - Select or multi-select vehicles to apply actions to a large group at one time.
+Originally split into multiple gameplay modlets because of strict product ID limits, COI: Extended now leverages the expanded 65,000 product space to merge major overhaul content into a single **Unified Core**.  
+Goals: faster iteration, deeper balancing, less mod clutter, and a stable foundation for new systems (Agriculture, advanced logistics, world progression, etc.).  
+Standalone utility / cheat / QoL modlets remain separate so you can customize difficulty or add convenience without committing to the full overhaul.
 
-- **Custom UI**:
-  - Mine Tower now allows you to set excavator priority individually for all assigned excavators, or all at once.
-  - Forestry Tower now shows the amount of trees planted in the area, the amount of designations, and the maximum amount of wood the area will produce.
+---
 
-- **Speed Controls**:
-  - Tired of only speeds 1-3? Tweaks mod introduces speeds from 1-15!
+## 2. Choosing the Right Download
 
-### StoragePlus Mod
+Select exactly ONE primary ZIP for any given save environment:
 
-- **Storage Control**:
-  - Remove throughput limits on all storages
-  - Allow edit of storage capacity with option to make the default capacity.
-  - Allow storage of any product that the storage supports (Steam, Exhaust, etc)
-  - Support for belt output slider.
+| Purpose | File (example) | Use This If | Save Compatibility | Future Features |
+| ------- | -------------- | ----------- | ------------------ | --------------- |
+| Unified future gameplay (overhaul) | `COIExtended-112u-ForNewGames.zip` | Starting a brand new game | Incompatible with old overhaul saves | ✅ Yes |
+| Continue existing overhaul save | `COIExtended-112-LEGACY-AllMods.zip` | Save used Logistics/World/Solar/Structures | Works with that save | ❌ No (compat only) |
+| Only QoL / cheats | `COIExtended-112-StandaloneONLY.zip` | Save never used overhaul modlets | Works with that save | Limited (standalone scope) |
+| Historical pin | Tag `v0.7.8.481` | Need reproducibility / comparison | Same as before | ❌ No |
 
-### ItemSink Mod
+Standalone Modlets (optional for either path—do NOT add legacy overhaul modlets into a Core game):
+- ItemSink
+- Cheats
+- Tweaks
+- StoragePlus
+- Difficulty
 
-- **Product Management**: Universal sink (absorbs unlimited products), universal source (spawns unlimited products).
+---
 
-### Difficulty Settings Mod
+## 3. Unified Core vs Legacy vs Standalone
 
-- **Difficulty**:
-  - Adjust settings from -90% to +500% for more flexibility.
+| Aspect | Unified Core | Updated Legacy | StandaloneONLY |
+| ------ | ------------ | -------------- | -------------- |
+| Target Use | Fresh campaigns | Finish old overhaul saves | Light customization |
+| Save Upgrade | Requires NEW save | Continue existing | Continue existing |
+| Ongoing Features | Full roadmap | None (compat only) | QoL/Cheat only |
+| Agriculture / Fishing Expansion | Integrated & growing | Not backported | N/A |
+| Sunset Risk | Long-term path | Will retire | Stays separate |
+| Mixing Allowed | Add standalone mods only | Don’t inject Core mid‑save | Can later start Core separately |
 
-### Solar Extended Mod
+---
 
-- **Solar Panels**:
-  - Quarter-size variants for all solar panel types.
+## 4. Feature Overview
 
-### World Extended Mod
+### 4.1 Unified Core (Merged Former Modlets)
+Contains content from Logistics Extended, World Extended, Solar Extended, Structures Extended (plus incremental Agriculture: Fishing/Canning).
 
-- **Random World Gen**:
-  - All new Random World gen with customizable settings.
-  - New Iron/Copper/Gold mine for the World Map.
-  - Dozen new ship parts including Armor4/5 and Guns 4/5 as well as ShipRadar3 upgrade.
-  - Initial ship fuel capacity increased to 35.
-  - Cargo Ship Drydock research available early.
-  - Option for Static (Default) World Map with custom logic.
-  - Estimated Location Count in Map Generation settings.
-  - Option to auto-select location count based on parameters.
-  - Mine multiplier functionality.
+Highlights (abridged):
+- Expanded transport tiers, balancers (small & large), throughput counters & customizable belt speeds.
+- Overclocking / underclocking (10–300%) influencing workers, maintenance, power, computing.
+- Random world generation controls (map size, sector counts, resource parameters, event tuning).
+- Progressive ship upgrades & world event balance changes.
+- Solar variants, structural additions, expanded food / canning / fish chains.
+- Integrated research progression nodes.
 
-### Logistics Extended Mod
-- **Transports**:
-  - Buff T1 Molten channel to 300/60 and introduces new T2 Molten Channel with 600/60 throughput.
-  - Introduce new T4 Flat/Unit and Loose conveyor belts.
-  - Reduce maintenance and power consumption on all belts by about 50%.
-  - Added throughput counter display for flat, loose, molten and fluid transports.
-  - Reduced train build time.
-  - Small balancer versions (4 I/O slots).
-  - Large balancer versions (12 I/O slots).
-  - Food Market I supports second food selection.
-  - Food Market II supports third food selection and 50% increased buffer.
-  - Liquid Dump recipes increased by 4x.
-  - Stacker throughput increased to 600/60.
+### 4.2 Standalone Modlets
 
-- **Overclocking**:
-  - Overclock machines or underclock them to save on workers and maintenance!
-  - Supports speeds from 10% to 300%.
-  - Affects worker costs, maintenance costs, electricity costs and computing consumption.
+#### Cheats
+Settlement (population/unity edits, disable needs), economy (instant build/research, free upkeep, infinite focus), environment (pollution toggles, infinite reserves), terrain (instant dig/dump, mass surface ops, weather locking), exploration/logistics (instant ship contracts, fuel disable, capacity & limits, navigation completion), product spawning/sinking, train multipliers, vehicle prototype editor (custom stats, save/load).
 
-## Usage
-- **Cheats**: Access via Cheats Window (Gameplay, Resources, Ships, Terrain, Vehicles tabs) with `F8`.
-- **Tweaks**: Use Tweaks Window for toggles with `F9`.
-- **StoragePlus**: Adjust storage via new UI controls.
-- **ItemSink**: Place sinks/sources in-game.
-- **Difficulty**: Modify sliders in settings.
-- **Solar**: Find quarter-size panels in build menu.
-- **World**: Adjust map settings on New Game Menu.
-- **Logistics**: Research nodes to unlock new things.
+#### Tweaks
+Game speed tiers 1–15, free camera, unlimited designation sizes / tower areas, rendering toggles (cloud/fog/weather), vehicle management overview, enhanced mine & forestry UI.
 
-## Notes
-- **Vehicle Editor**: Experimental and still WIP, back up saves before use.
+#### StoragePlus
+Remove throughput limits, edit capacity (set as new default optionally), allow any supported product types (steam, exhaust, etc.), belt output slider.
 
-# Install 
-## How do I install the mod?
-1) **Download** latest release `COIExtendedv-xxx.zip `on the Releases page at https://coie.keranik.com/releases
-2) Open **Windows Explorer** and paste the following to the Address Bar: `%APPDATA%\Captain of Industry\Mods`
-3) If directory does not exist, instead paste `%APPDATA%\Captain of Industry` and then create `Mods` folder.
-4) Open **COIExtended-xxx.zip** and extract/copy desired mods to **Mods** directory.
-5) Open game and **Enable Mods** in the **Settings** menu, then restart game.
+#### ItemSink
+Universal infinite sink and universal source.
 
-## How do I add the mod to a saved game?
-- **After** properly installing mods, start the game and choose **Load** at the main menu.
-- **Select** the save file that you wish to play but do not press **Load**
-- Notice the **Wrench** icon in the bottom right of the panel, click it.
-- On this screen you may now enable or disable mods for your save file.
-- Some mods may or may not be compatible with your save file.
+#### Difficulty
+Adjust broad difficulty multipliers (–90% to +500%).
 
-# Reporting Issues
-## How do I report an issue?
-- Click **Issues** at the top of the page, and choose a title that summarizes your issue.
-- Look for your latest game log file at `%APPDATA%\Captain of Industry\Logs` and attach it to the report.
-- If possible, find the saved game file you are having trouble with in `%APPDATA%\Captain of Industry\Saves` and attach it to the report.
-- In the body of your report, be as descriptive as possible with your issue and include the following:
--- What behavior are you experiencing?
--- What behavior do you expect to happen?
--- How can one reproduce the behavior you are experiencing (if applicable)?
-- Ensuring you follow these simple steps will help you and the mod author fix the problem as soon as possible.
+### 4.3 Deprecated Legacy Overhaul Modlets
+Logistics / World / Solar / Structures exist only in legacy bundle form for save continuity; no new features.
 
-## Thank you for your interest in Captain of Industry: Extended
-### Support the mod on Patreon at patreon.com/keranik
-### No Patreon? Donate directly at paypal.me/undiscoveredent
+---
 
-# Mod Notice for COIExtended
+## 5. Installation & Upgrading
 
-All rights reserved to Undiscovered Entertainment for the original code, concepts, and assets created for this mod, except where otherwise noted. No part of this mod’s original content may be used, modified, or distributed without express written permission from Undiscovered Entertainment.
+### 5.1 Unified Core (Fresh Start)
+1. Backup saves.
+2. Delete `%APPDATA%\Captain of Industry\Mods` (or move it aside).
+3. Extract `COIExtended-112u-ForNewGames.zip`.
+4. Optionally add standalone modlets.
+5. Enable mods in game settings → start a NEW game.
 
-All *Captain of Industry* related content, including but not limited to game assets, code, and intellectual property, is copyright © MaFi Games and used under the terms of their End-User License Agreement and modding policy. This mod is an unofficial, non-commercial fan project and is not endorsed by MaFi Games.
+### 5.2 Updated Legacy
+1. Backup.
+2. Replace previous legacy modlet folders with `COIExtended-112-LEGACY-AllMods.zip`.
+3. Continue existing save. Do NOT add Unified Core.
 
-This mod is provided free of charge. Optional donations are appreciated but do not grant additional access or rights to the mod. For inquiries, contact Keranik on Captain of Industry's Discord server.
+### 5.3 StandaloneONLY
+1. Remove any overhaul modlets.
+2. Install `COIExtended-112-StandaloneONLY.zip`.
+3. Continue or start save with QoL/cheats only.
 
+### 5.4 Mid-Save Switching Policy
+- Legacy overhaul → Core: Not supported (start new save).
+- StandaloneONLY → Core: Allowed only by starting fresh.
+- Always keep backups.
+
+### 5.5 Adding Mods to an Existing Save
+1. Load screen (don’t load yet) → Wrench icon.
+2. Toggle standalone mods only.
+3. Confirm & load.
+
+---
+
+## 6. Using the Mods (Short How‑To)
+
+| Component | Access / Hotkey | Notes |
+| --------- | --------------- | ----- |
+| Cheats Window | F8 | Tabs: Settlement, Economy, Environment, Terrain, Vehicles, etc. |
+| Tweaks Window | F9 | Speed tiers, camera, rendering toggles |
+| Overclocking | Building UI (Core) | 10–300% dynamic scaling |
+| StoragePlus | Storage UI | Capacity & throughput edits |
+| Vehicle Prototype Editor | Cheats > Vehicles | Save/load custom prototypes |
+| Difficulty Sliders | Mod Settings | –90% to +500% |
+| World Gen Options | New Game screen | Random map parameters |
+| ItemSink / Source | Build menu | Instant spawn/void |
+
+---
+
+## 7. Reporting Issues
+
+Include:
+1. Path (Core / Legacy-AllMods / StandaloneONLY)
+2. ZIP name & list of enabled standalone mods
+3. Reproduction steps (expected vs actual)
+4. Log `%APPDATA%\Captain of Industry\Logs`
+5. Save `%APPDATA%\Captain of Industry\Saves` (if reproducible)
+6. Screenshots / video (optional)
+
+Open a GitHub Issue with a concise, descriptive title.
+
+---
+
+## 8. Contributing & Requests
+
+Focus: Stabilizing Unified Core & Agriculture expansion.  
+Request features via GitHub Issues (label suggestion). Provide rationale & balance notes.  
+Translations: PRs welcome (English is canonical source).
+
+---
+
+## 9. FAQ
+
+| Question | Answer |
+| -------- | ------ |
+| Can I migrate an old overhaul save to Core? | No—new save required. |
+| Will legacy overhaul get new features? | No, compatibility patches only. |
+| Are standalone mods safe with Core? | Yes—just don’t add legacy overhaul modlets. |
+| Why unification now? | Product ID limit lifted; reduces maintenance & fragmentation. |
+| Performance changes? | Similar or improved vs multiple simultaneous modlets. |
+| Where suggest new settings? | Official Discord `#modding` or GitHub Issues. |
+| Vehicle Prototype Editor stable? | Experimental—backup first. |
+
+---
+
+## 10. 简体中文速览 (Chinese Quick Guide)
+
+| 你的需求 | 下载 | 说明 |
+| -------- | ---- | ---- |
+| 新开档 + 未来内容 | `COIExtended-112u-ForNewGames.zip` | 统一核心，需新存档 |
+| 继续旧“大改”存档 | `COIExtended-112-LEGACY-AllMods.zip` | 旧功能子模组整合，仅兼容 |
+| 只用 QoL / 作弊 | `COIExtended-112-StandaloneONLY.zip` | 独立子模组 |
+| 历史复现 | 标签 `v0.7.8.481` | 旧版本参考 |
+
+不要把旧功能子模组与统一核心混用。完成旧存档后再转统一核心。
+
+---
+
+## 11. License / Attribution / Support
+
+All rights reserved to Undiscovered Entertainment for original code, concepts, and assets except where noted. No redistribution or derivative works without explicit written permission.
+
+Captain of Industry assets & IP © MaFi Games; used under their EULA and modding policy. Unofficial, non‑commercial fan project; not endorsed by MaFi Games.
+
+Free to use; donations optional (no extra rights/access).
+
+Support / Donate:
+- Patreon: https://patreon.com/keranik
+- PayPal: https://paypal.me/undiscoveredent
+
+Contact: Keranik on the official Captain of Industry Discord (`#modding`).
+
+---
+
+## 12. Changelog Pointer
+
+See the latest GitHub Release for full patch notes (Fishing/Canning wave, world/event adjustments, settings expansions, fixes, etc.).
+
+---
+
+### Enjoy COI: Extended! 💚  
+If it improves your game, star the repo or share feedback—early adopters shape what comes next.
