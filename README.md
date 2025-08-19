@@ -106,19 +106,18 @@ Logistics / World / Solar / Structures exist only in legacy bundle form for save
 
 ### 5.1 Unified Core (Fresh Start)
 1. Backup saves.
-2. Delete `%APPDATA%\Captain of Industry\Mods` (or move it aside).
-3. Extract `COIExtended-112u-ForNewGames.zip`.
-4. Optionally add standalone modlets.
+2. Delete all mods that have the COIExtended prefix in `%APPDATA%\Captain of Industry\Mods` (or move it aside).
+3. Extract `COIExtended-xxx.zip` to the Mods directory.
 5. Enable mods in game settings → start a NEW game.
 
 ### 5.2 Updated Legacy
-1. Backup.
-2. Replace previous legacy modlet folders with `COIExtended-112-LEGACY-AllMods.zip`.
+1. Backup your saved games.
+2. Replace previous legacy modlet folders with `COIExtended-xxx-LEGACY-AllMods.zip` by extracting the file to your `Mods` directory.
 3. Continue existing save. Do NOT add Unified Core.
 
 ### 5.3 StandaloneONLY
-1. Remove any overhaul modlets.
-2. Install `COIExtended-112-StandaloneONLY.zip`.
+1. Remove any overhaul modlets (if desired).
+2. Install `COIExtended-xxx-StandaloneONLY.zip` by extracting the file to your `Mods` directory..
 3. Continue or start save with QoL/cheats only.
 
 ### 5.4 Mid-Save Switching Policy
