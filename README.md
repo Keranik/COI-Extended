@@ -1,26 +1,4 @@
 <div align="center">
-# COI:Extended - Indefinite Hiatus
-
-**Important Announcement: This project is on indefinite hiatus, and no further updates will be made.**
-
-After several years of developing and maintaining COI:Extended (and the associated modular family of mods), I've decided to step away from Captain of Industry modding entirely.
-
-This decision wasn't made lightly—these mods began as a passion project to expand on the game's systems, adding deeper optimization tools, quality-of-life features, and late-game content that many in the community requested and enjoyed. They've allowed me (and hopefully many of you) to sink thousands of hours into creative and challenging factories, and I'm genuinely grateful for everyone who's downloaded them, shared feedback, reported issues, or simply said thanks. The community support has been the best part, and it's what kept me going for so long.
-
-Unfortunately, recent developments have made continuing unsustainable for me:
-- Repeated unannounced changes to the game's systems over the past year have forced multiple full rewrites of the mods—this is now the third time, each requiring significant effort to restore functionality, all without any prior communication or collaboration from the developers to ease the transition or provide better tools.
-- The handling of community feedback often feels dismissive; while input is solicited, non-positive criticism (on issues like update pacing, feature scope, or mod support) is frequently met with responses that minimize concerns, reframe them, or shift focus, making it hard to feel heard as a long-time contributor.
-- The introduction of paid DLC expanding on systems that were deliberately rebalanced to become central (such as trains after Update 3's maintenance changes), during an Early Access period that's now in its fourth year with ongoing delays on promised features like proper mod tools and other roadmap items, has created a perception of prioritizing monetization over completing the original vision.
-- Broader shifts in direction—such as additions that reduce core challenges (e.g., amphibious vehicles lessening the need for terraforming, a standout early feature) and persistent technical issues (late-game performance drops, half-baked systems like zones or ship combat UI)—have eroded the punishing depth and optimization focus that initially drew me to the game.
-- Overall, these patterns—from lack of outreach on impactful changes to responses that often feel evasive or contradictory—have drained the enthusiasm I once had, making it impossible for me to continue contributing or recommending the game in good faith.
-
-Existing versions of the mods remain available for download and personal use on compatible game versions. Feel free to continue enjoying them as-is.
-
-Thank you again to everyone who's been part of this journey—it's meant a lot.
-
-Take care,  
-Keranik
-
 # 🏭 COIExtended Mod Family
 
 **A comprehensive suite of modular mods for Captain of Industry**
