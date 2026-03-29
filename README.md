@@ -1,595 +1,445 @@
-<div align="center">
+# 🏭 COI:Extended Mod Suite
 
-# 🏭 COIExtended Mod Family
-
-**A comprehensive suite of modular mods for Captain of Industry**
+A comprehensive, modular family of mods for **Captain of Industry**
 
 [![Captain of Industry](https://img.shields.io/badge/Captain%20of%20Industry-Mod-blue)](https://www.captain-of-industry.com/)
-[![License](https://img.shields.io/badge/License-All%20Rights%20Reserved-red)](#license)
+![Game Version](https://img.shields.io/badge/Game%20Version-0.8.2c%20b559-green)
+![Update](https://img.shields.io/badge/Update%204-Compatible-brightgreen)
+![License](https://img.shields.io/badge/License-All%20Rights%20Reserved-red)
 
-[📥 Installation](#-installation) • [🐛 Report Bug](../../issues) • [💡 Request Feature](../../issues) • [💬 Discussions](../../discussions)
+[📥 Download Latest Release](https://github.com/Keranik/COI-Extended/releases/latest) · [🐛 Report Bug](https://github.com/Keranik/COI-Extended/issues/new) · [💡 Request Feature](https://github.com/Keranik/COI-Extended/issues/new) · [💬 Discussions](https://github.com/Keranik/COI-Extended/discussions) · [💬 Discord](https://discord.gg/JmVjxdwX)
 
 ---
 
-</div>
+## 📦 Mod Overview
 
-## 📦 Available Mod Packs
+COI:Extended is a family of modular mods you can mix and match in a single save. Pick the full late‑game overhaul, focused utilities, or anything in between.
 
-COIExtended is a family of modular Captain of Industry mods, ranging from a full late‑game overhaul to focused utility, difficulty, and QoL packs.  **You can mix and match most of them in a single save.**
+| Mod | Description | Requires Common? |
+|-----|-------------|:---:|
+| **COIExtended‑Common** | Shared library: Harmony, mod registry, compact number formatter | — |
+| **COIExtended‑Core** | Main gameplay overhaul — late‑game content, fusion, satellites, vehicles, recipes | ✅ |
+| **COIExtended‑Automation** | Smart Balancers/Zippers + **ENet circuit automation** (wires, combinators, wireless) | ✅ |
+| **COIExtended‑Cheats** | Full cheat / god‑mode toolkit with multi‑tab UI | ✅ |
+| **COIExtended‑Tweaks** | QoL tweaks — free camera, efficiency overlay, line placement, forestry tools | ✅ |
+| **COIExtended‑StoragePlus** | Storage & buffer overhaul with persistent per‑prototype defaults | ✅ |
+| **COIExtended‑Difficulty** | Drastically expanded difficulty sliders (–90 % to +500 %) | No |
+| **COIExtended‑RecipeMaker** | Custom recipe creation tool (main‑menu button) | No |
+| **COIExtended‑VehicleMaker** | Vehicle cloning & customization *(experimental)* | ✅ |
+| **COIExtended‑Sanitizer** | Console tool to clean dead mod configs from saves | No |
+| **COIExtended‑ItemSink** | Dev spawner & sink — *effectively deprecated; use the built‑in Sandbox equivalents* | No |
 
-| Mod Pack | Description |
-|----------|-------------|
-| **COIExtended.Core** | Main gameplay overhaul with extensive late-game content |
-| **COIExtended.Automation** | Smart Balancer / Smart Zipper only |
-| **COIExtended.Cheats** | Full cheat / god‑mode toolkit |
-| **COIExtended.Difficulty** | Extended difficulty sliders (rebuilds vanilla difficulty menu) |
-| **COIExtended.ItemSink** | Dev‑style resource spawner and sink |
-| **COIExtended.Sanitizer** | Save config sanitizer for "stuck" configs |
-| **COIExtended.StoragePlus** | Storage & buffer overhaul with persistent settings |
-| **COIExtended.Tweaks** | UI / gameplay tweaks, free camera, forestry tools, and visual toggles |
-
-> **⚠️ Legacy Notice:** Legacy overhaul modlets are no longer part of this lineup. Legacy users should use the Steam beta branch **`b481`** with their existing mods.
+> **Note:** As of v116+ all mod directory names use the **hyphen** format (e.g. `COIExtended-Core`). Delete any old `COIExtended.XYZ` folders before installing.
 
 ---
 
 ## 📥 Installation
 
 ### Requirements
-- Captain of Industry (latest version recommended)
-- Basic file management knowledge
 
-### Installation Steps
+- **Captain of Industry** Update 4 (v0.8.2+) — legally obtained copy
+- **COIExtended‑Common** must be installed alongside any mod marked ✅ above
 
-1. **Download the mod(s)** you want from the [Releases](../../releases) page
-2. **Locate your game's mod folder:**
-   ```
+### Steps
+
+1. Download the mod(s) you want from the [Releases](https://github.com/Keranik/COI-Extended/releases) page.
+2. Locate your mods folder:
+```
    %APPDATA%\Captain of Industry\Mods
-   ```
-   Or navigate manually:
-   - Open File Explorer
-   - Type `%appdata%` in the address bar and press Enter
-   - Navigate to: `%APPDATA%\Captain of Industry\Mods`
-   - If the `Mods` folder doesn't exist, create it
-
-3. **Extract the mod folder(s)** into the `Mods` directory
-   - Each mod should be in its own subfolder (e.g., `Mods\COIExtended.Core\`)
-
-4. **Launch the game** and verify the mod appears in the Mods menu
+```
+If the `Mods` folder doesn't exist, create it.
+3. Extract each mod into its own subfolder (e.g. `Mods\COIExtended-Core\`).
+4. Launch the game → **Mods** menu → enable the mod(s) → restart or continue as prompted.
 
 ### Load Order & Compatibility
 
-- Most COIExtended mods can be used together
-- **COIExtended.Core** should be loaded if you want the full overhaul experience
-- Individual utility mods (Automation, Tweaks, StoragePlus, etc.) work standalone
-- **COIExtended. Sanitizer** is only needed for troubleshooting stuck configs
+- **COIExtended‑Common** loads first automatically (dependency system).
+- Most mods work standalone or together; **Core** gives you the full overhaul experience.
+- **Sanitizer** is only needed for troubleshooting stuck configs.
+- **ItemSink** functionality is now available natively via Sandbox mode or through the Cheats mod.
 
 ---
 
-## 📚 Mod Documentation
+## 📚 Feature Guide
+
+### 🔧 COIExtended‑Common *(Required Shared Library)*
+
+- **SharedHarmony** — single copy of 0Harmony.dll eliminates version conflicts.
+- **Mod Registry** — auto‑detects installed COIE mods so cross‑mod features activate seamlessly.
+- **Compact Number Formatter** — shared utility for displaying values like `1.2K`, `3.4M` across UIs.
+
+---
+
+### 🏭 COIExtended‑Core — Main Overhaul
+
+A massive late‑game expansion that supersedes the legacyLogistics / World / Solar / Structures modlets.
 
 <details>
-<summary><h3>🏭 COIExtended.Core – Main Overhaul</h3></summary>
+<summary><b>⚗️ Lithium & Oceanic Materials</b></summary>
 
-The Core pack merges and supersedes the old "Logistics/World/Solar/Structures Extended" modlets and adds substantial late‑game content. 
-
-<details>
-<summary><h4>⚡ Late‑Game Progression</h4></summary>
-
-#### Lithium & Oceanic Materials
-- Lithium extraction from seawater via heated ponds and thermal desalinators
-- New brine types and chemistry:
-  - Lithium‑rich, concentrated, and spent brines
-  - Ion extraction and electrodialysis → `Lithium chloride` and `Salt mix (impure)`
-  - Chlor‑alkali regeneration closes brine loops and produces `Hydrogen chloride`
-- Carbonate chemistry:
-  - Soda ash (Solvay), caustic soda, impure salt electrolysis, fertilizer from impure salt
-  - Alkaline wastewater treatment
-
-#### Batteries & Silicon Recovery
-- **Battery Chemistry:**
-  - NMC and High‑Ni cathodes
-  - Li‑ion battery packs built in robotic assemblers
-  - Dedicated **Electrode Coater** for cathode coating
-- **Silicon Recovery:**
-  - Final‑stage chip recycling (normal & lithium‑doped)
-  - Mono‑Si solar cells with lithium‑enhanced wafers
-  - Silicon wafer recycling → polysilicon
-
-#### Isotopes, Heavy Water & Deuterium
-- Lithium isotope enrichment in the **Uranium Enrichment Plant**
-- Heavy water fractionation and deuterium extraction in **Electrolyzer T2**
-- Argon production via Air Separator (air separation + argon distillation)
-
-#### Fusion Power & Helium
-- **D‑T fuel cycle:**
-  - Heavy water + enriched lithium → `Tritium` and `Deuterium`
-  - DT fuel rods + reprocessing loop to recover isotopes and slag
-- **Fusion reactor:**
-  - Feeds **Multistage Turbine** and **Power Generator T3** for GW‑scale power
-- **Helium chain:**
-  - Helium air separation, distillation, and helium cooling (liquid helium as coolant)
-
+- Seawater evaporation → brine intensification → lithium extraction
+- New fluids: `Brine (lithium)`, `Brine (concentrated)`, `Brine (spent)`, `Lithium eluate`, `Lithium chloride`, `Lithium carbonate`, `Salt mix (impure)`, `Caustic soda`, `Hydrogen chloride`, `Exhaust (clean)`
+- Electrodialysis, chlor‑alkali regeneration, and closed‑loop brine recycling
+- Soda ash (Solvay process), impure salt electrolysis, fertilizer conversion, alkaline wastewater treatment
 </details>
 
 <details>
-<summary><h4>🛰️ Orbital Satellites & Beamed Power/Computing</h4></summary>
+<summary><b>🔩 Alloys, Nickel & ScrapRecycling</b></summary>
 
-#### Satellites & Assembly
-- Solar satellites (standard & HighNi), relay satellites, comms satellites, supercomputer satellites
-- Satellite thrusters and hardware assembled in the **Satellite Assembler**
+- New materials: Nickel, Manganese, Cobalt, Alnico alloy, Aluminum foil
+- Ladle Furnace enhancements — scrap remelting for iron, copper, aluminum, glass, gold
+- Manganese steel and Alnico alloying
+- *Nickel is directly mineable; Manganese flakes and Cobalt powder come from trade or variable mines*
+</details>
+
+<details>
+<summary><b>🔋 Batteries & Silicon Recovery</b></summary>
+
+- NMC and High‑Ni cathodes → Li‑ion battery packs
+- Dedicated **ElectrodeCoater** building
+- Final‑stage microchip recycling (normal & lithium‑doped)
+- Mono‑Si solar cells, silicon wafer recycling → polysilicon recovery
+</details>
+
+<details>
+<summary><b>☢️ Isotopes, HeavyWater & Deuterium</b></summary>
+
+- Lithium isotope enrichment (Uranium Enrichment Plant)
+- Heavy water fractionation & deuterium extraction (Electrolyzer T2)
+- Argon production via Air Separator
+</details>
+
+<details>
+<summary><b>⚛️ Fusion Power & Helium</b></summary>
+
+- D‑T fuel cycle: DT fuel rods, tritium, deuterium, reprocessing loop
+- **Fusion Reactor**, **Multistage Turbine**, **Power Generator T3** — GW‑scale power
+- Helium chain: air separation, distillation, liquid helium coolant
+</details>
+
+<details>
+<summary><b>🛰️ Orbital Satellites & Beamed Power</b></summary>
+
+- Satellite types: Solar (standard & HighNi), Relay, Comms, Supercomputer
+- **Satellite Assembler**, **Satellite Control Center**, **Satellite Receiver**
+- Fully simulated orbital network with health, alignment, priority‑based allocation, and degradation
+- Comms satellites generate discoveries to reveal new world locations
 - Rocket III (synfuel‑only) as late‑game launch vehicle
-
-#### Network Simulation
-- Global **SatellitesManager:**
-  - Tracks stored vs deployed satellites per type
-  - Computes total power and computing output, scaled by network health and type multipliers
-  - Allocates output to ground receivers by **priority**, with proportional sharing under contention
-  - Simulates failures and degradation; relay satellites can regenerate health if over‑provided
-  - Performs probabilistic **alignment** checks to hook receivers into the network
-
-#### Ground Infrastructure
-- **Satellite Control Center:**
-  - Per‑type target counts and auto‑deployment from orbit storage
-  - Claims existing deployed satellites on construction
-- **Satellite Receivers:**
-  - Mode‑switchable by satellite type
-  - Act as generators (power or computing) and consumers (power or computing) depending on mode
-  - Respect maintenance, workers, electricity, and computing requirements
-
-#### Discoveries
-- **Comms satellites:**
-  - Build discovery progress over time, gated by network health
-  - Generate "pending discoveries" that world systems can consume to reveal new locations
-
+- Satellite receivers are multi‑mode: solar power, high‑efficiency power, supercomputer computing, relay, or communications
 </details>
 
 <details>
-<summary><h4>⛽ Synfuel & Advanced Logistics</h4></summary>
+<summary><b>⛽ Synfuel, Vehicles & Logistics</b></summary>
 
-#### Synfuel Chain
-- Synfuel (liquid and gas) products
-- Synfuel Refinery, Synfuel Generator, HP Gas Boiler
-- Expanded oil chain:
-  - Heavy/medium/light oil cracking
-  - T2 distillation and enhanced sour‑water handling
-
-#### Vehicles & Fuel
-- Large trucks and large excavators with support for diesel, hydrogen, and synfuel
-- Synfuel variants of mega vehicles, excavators, tree planters, harvesters
-- Synfuel locomotives and synfuel cargo ships
-- Dedicated research nodes for synfuel vehicles, cargo docks, and generators
-
-#### Fuel Stations & Depots
-- Fuel Station IV with diesel, hydrogen, and synfuel variants
-- New T4 cargo depot modules for unit, loose, and fluid with proper colliders and icons
-
+- Synfuel refinery, synfuel generator, HP gas boiler, expanded oil cracking
+- Large trucks & excavators (diesel / hydrogen / synfuel variants)
+- T2 Synfuel Locomotive, synfuel cargo ships
+- Fuel Station IV, T4 cargo depot modules (unit/ loose / fluid)
+- Cargo Depot Module (XL): 3 200 capacity, 1 000 throughput
 </details>
 
 <details>
-<summary><h4>🌍 World, Mines, Fracking & Events</h4></summary>
+<summary><b>⛏️ World, Mines & Fracking</b></summary>
 
-#### Mines & Variable Deposits
-- Dedicated mines: copper, iron, gold, titanium
-- **VariableMineEntity:**
-  - When spawned, each mine rolls 1–3 possible products from its `AvailableProducts` list (deterministic per site)
-  - Player chooses which of those products to extract via UI; buffer and output update accordingly
-- Some advanced materials (e.g.  `Manganese flakes`, `Cobalt powder`) are not directly mineable:
-  - Obtained via **trade** or variable mines that rolled them
-
-#### Fracking Wells
-- Water‑in, gas + wastewater‑out wells that mirror real fracking behavior
-- Tied into extended water treatment and waste/brine loops
-
-#### World & Events
-- More flexible world‑gen caps:
-  - Higher max map dimensions, sectors, locations, and connection distances
-- Event tuning:
-  - Loot vs "nothing found" odds, pirate behavior, enemy spawn scaling per tier
-  - Radioactive loot removed by default (toggleable elsewhere)
-
+- **Variable Mines** — each mine rolls1–3 random products on spawn; player picks which to extract
+- Dedicated mines: Copper, Iron, Gold, Titanium
+- Fracking wells: water‑in → gas + wastewater
+- Extended world‑gen caps and event tuning
 </details>
 
 <details>
-<summary><h4>🎣 Food, Fishing & Canning</h4></summary>
+<summary><b>🎣 Food, Fishing & Canning</b></summary>
 
-#### Fishing & Fish Farms
-- Fishing Docks I/II/III with proper models and logistics ports
-- Fish Farms with:
-  - Configurable bait types
-  - Adjusted catch rates, bait usage, and buffer sizes
-  - Fixes for bait buffer/logistics issues on type changes
-
-#### Fish Chain
+- FishingDocks I/II/III, Fish Farms with configurable bait
 - Fish species: sardines, anchovies, mackerel, cod, tuna, swordfish
-- Byproducts: fish oil (fluid), fish scales (loose), raw fish
-
-#### Canning
-- Canned foods:
-  - Empty cans, canned fish, canned fruit/vegetables, canned food packs
-- Balanced recipes and value across the chain
-- Contracts and quick trades for canned goods
-
-#### Side Uses
-- Fish scales → organic fertilizer and burnable fuel
-- Fish oil → antibiotics and waste‑dump recipes
-
+- Canning chain: empty cans → canned fish / fruit / vegetables / food packs
+- Fish scales → organic fertilizer; fish oil → antibiotics
 </details>
 
 <details>
-<summary><h4>⚙️ Maintenance, Overclocking & UI</h4></summary>
+<summary><b>⚙️ Overclocking & Maintenance</b></summary>
 
-#### Overclocking (10–300%)
-- Overclock/underclock machines with:
-  - Scaled workers, maintenance, electricity, and computing
+- Overclock/underclock machines 10–300 % with scaled workers, maintenance, electricity, computing
 - Copy/paste overclock settings
-- Overclocking tech node moved under Maintenance Depot II
-
-#### Maintenance Depot IV
-- T4 Maintenance Depot that can produce **all previous maintenance types**
-- Greatly simplifies late‑game maintenance
-
-#### UI & Research
-- Revised research tree:
-  - Drydock vs Cargo Ship dependencies
-  - Ship armor/weapons placement
-  - Biofuel and overclocking nodes repositioned
-- Numerous bugfixes and tooltip / icon improvements
-
+- **Maintenance Depot IV** — produces all previous maintenance types
+- Animation speeds scale properly with overclock rate
 </details>
 
 <details>
-<summary><h4>⚙️ Built-In Mod Settings</h4></summary>
+<summary><b>🎛️ Built‑In Mod Settings</b></summary>
 
-Core ships with a persistent, versioned **Mod Settings DB** that exposes configurable options in the in‑game Settings menu:
+Persistent, versioned settings exposed in the in‑game Settings menu:
 
-#### Storage & Logistics
-- Allow all product storage (per‑storage "allow all" baseline)
-- Remove storage throughput limit
-- Vehicle cargo pickup duration (Instant → Slowest)
-
-#### Gameplay
-- Liquid dump recipe multiplier
-- Food market capacity multiplier
-- Shipyard cargo capacity
-
-#### Transports – Throughput per Tier & Type
-- Molten channels T1–T2
-- Flat belts T1–T4
-- Loose belts T1–T4
-- Fluid transports T1–T4
-
-#### Transports – Cost Multipliers
-- Transport maintenance multiplier (stacked on top of COIExtended's base ~50% reduction)
-- Transport electricity and construction multipliers
-
-#### Trains
-- Base train capacity multiplier
-- Reduced train build duration toggle
-- Added train wagon capacity multiplier (additive)
-- Added train station capacity multiplier (additive)
-
-Settings are versioned (`CURRENT_SAVE_VERSION = 120`) and serialized per save.
-
+- **Storage &Logistics** — allow‑all storage, remove throughput limits, vehicle pickup duration
+- **Gameplay** — liquid dump multiplier, food market capacity, shipyard cargo capacity
+- **Transports** — per‑tier throughput for molten, flat, loose, and fluid; cost multipliers for maintenance / electricity / construction
+- **Trains** — base capacity multiplier, reduced build duration, wagon & station capacity multipliers, train station throughput multiplier
+- **Ore Sorter** — buffer multiplier, speed settings
 </details>
 
+---
+
+### 🔗 COIExtended‑Automation — Smart Balancers + ENet Circuit Network
+
+#### Smart Balancer / Smart Zipper
+
+- 8‑port, power‑aware splitter/merger with per‑port priority, productfilters, throughput caps
+- Even distribution modes for inputs or outputs
+- Dynamic buffer sizing and fully cloneable config
+
+#### 🆕 ENet — Extended Network *(Experimental)*
+
+A complete **circuit automation system** inspired by Factorio's circuit network.
+
+<details>
+<summary><b>How It Works</b></summary>
+
+- Connect buildings with **Blue** and **Yellow** wires to form signal networks
+- Signals update once per game tick with a one‑tick propagation delay
+- Max wire distance: **48 tiles** — use Signal Relays to bridge longer gaps
+- Select the **Wire Tool** from the Automation toolbar; press **Tab** to toggle wire color
 </details>
 
 <details>
-<summary><h3>🔀 COIExtended.Automation – Smart Balancer / Smart Zipper</h3></summary>
+<summary><b>Signal Processing Buildings</b></summary>
 
-Contains only the **Smart Zipper** (Smart Balancer):
-
-- **8‑port, power‑aware splitter/merger:**
-  - Per‑port **priority levels**, **product filters**, and **throughput caps**
-  - Per‑port "bucket" accounting to enforce soft rate limits over time
-- **Even distribution modes:**
-  - Force even on inputs or outputs, overriding priorities
-- Dynamic buffer sizing and delay based on effective throughput and connections
-- Fully cloneable config and safe serialization
-
+| Building | Purpose |
+|----------|---------|
+| **Signal Emitter** | Outputs up to 20 fixed signal values (constant source) |
+| **Arithmetic Processor** | Math on signals — add, subtract, multiply, divide, modulo, bitwise, power; supports `Each` wildcard |
+| **Logic Gate** | Conditional output — multiple conditions with AND/OR; multiple output slots |
+| **Signal Selector** | Picks signals by index, count, or random selection |
 </details>
 
 <details>
-<summary><h3>🎨 COIExtended.Tweaks – UI & Gameplay Tweaks</h3></summary>
+<summary><b>Output & Control Buildings</b></summary>
 
-Tweaks provides non‑cheat quality‑of‑life and visualization improvements. 
-
-<details>
-<summary><h4>📷 Camera & Area Limits</h4></summary>
-
-#### Free Camera
-- Unlocks an unconstrained camera:
-  - No terrain clipping
-  - Infinite zoom and free movement
-
-#### Unlimited Designations
-- Removes size caps on:
-  - Mining and dumping areas
-  - Surface designations
-  - Forestry harvest zones
-
-#### Unlimited Tower Area
-- Removes default area limits for towers (e.g. forestry towers)
-
+| Building | Purpose |
+|----------|---------|
+| **Circuit Alarm** | Plays configurable alert sounds on condition; edge‑triggered, volume/pitch/global control |
+| **Signal Display** | Compact indicator panel — color driven by 0xRRGGBB signal value; tile multiple for status boards |
+| **Power Relay** | Enables/disables power delivery based on a circuit condition (backup generators, load shedding) |
 </details>
 
 <details>
-<summary><h4>🎭 Rendering & Visuals</h4></summary>
+<summary><b>Networking Buildings</b></summary>
 
-#### Disable Clouds / Fog / Weather
-- Independently toggle:
-  - Cloud rendering
-  - Fog rendering
-  - Weather effect visibility (visual only; simulation remains)
-
-#### Disable Emissions
-- Globally disables emissions/particle systems on all relevant prototypes
-- Due to engine limitations, requires a full save/load to fully enable or disable
-
+| Building | Purpose |
+|----------|---------|
+| **Signal Relay** | Passive junction box — daisy‑chain toextend wire range; no power needed |
+| **Wireless Broadcaster** | Transmits wired signals over a configurable radio frequency |
+| **Wireless Receiver** | Receives wireless signals and injects them onto local wires |
 </details>
 
 <details>
-<summary><h4>🚜 Forestry & Vehicle QoL</h4></summary>
+<summary><b>Machine Integration & Signal Types</b></summary>
 
-#### Forestry Tower Enhancements
-- Forestry towers gain:
-  - A **total throughput view** for their managed area
-  - Direct control over **excavator mining priorities** for that area, configured from the tower UI
+- Any base‑game machine can be wired — set conditions to auto‑enable/disable, or broadcast product levels
+- **Product signals** — every item and fluid
+- **Virtual channels** — 36 channels labeled `0–9` and `A–Z`
+- **Wildcards** — `Each`, `Anything`, `Everything`
+</details>
 
-#### Vehicle Replacer / Mass Upgrade
-- Vehicle Replacer column:
-  - Mass‑upgrade tools for trucks, excavators, tree harvesters, and tree planters
-  - Pick current type, target type, and quantity (or all) to upgrade
+---
 
+### 🎨 COIExtended‑Tweaks — QoL & Visualization
+
+- **Free Camera** — unconstrained camera with infinite zoom, no terrain clipping
+- **Unlimited Designations** — removes size caps on mining, dumping, surface, and forestry zones
+- **Unlimited Tower Area** — removes default area limits for towers
+- **Disable Clouds / Fog / Weather** — independent toggles for each rendering layer
+- **Disable Emissions** — globally disables particle systems (requires save/load to take full effect)
+- **Forestry Tower Enhancements** — throughput view and excavator priority controls from the tower UI
+- **Vehicle Replacer / Mass Upgrade** — mass‑upgrade trucks, excavators, harvesters, and planters
+- **Unlimited Demolish** — always allow demolition of static entities
+- **Fix Stuck Trucks** — resolves cargo‑stuck edge cases
+- **🆕 Line Placement** — hold `Ctrl+Shift` while placing any entity → click to draw a straight line in any direction
+- **🆕 Efficiency Overlay** — toggle to visualize building efficiency at a glance
+- **🆕 X‑Ray Tool Toggle** — enable/disable the X‑ray tool in regular gameplay
+- **🆕 Transport Pillar Tool** — mass add/delete transport pillars non‑destructively
+- **🆕 Transport Visualizer** — see where your transports are going
+- **🆕 config.json system** — toggle options are now global (shared across saves); multiplier settings remain save‑specific
+
+#### Console Commands
+
+| Command | Description |
+|---------|-------------|
+| `list_locomotives` | List all locomotives |
+| `randomize_loco_numbers` | Randomize locomotive numbers |
+| `set_loco_number` | Set a specific locomotive number |
+
+---
+
+### 📦 COIExtended‑StoragePlus — Storage & Buffer Overhaul
+
+- **Per‑storage capacity** — change capacity via text field; excess is pushed through logistics (not destroyed)
+- **Make Default** — writes current capacity to the prototype; future storages spawn with your chosen value
+- **Allow All** toggle — allows any compatible product of the same type
+- **Import / Export / Transport sliders** — synchronized sliders + numeric fields for truck and belt thresholds
+- **Vehicle enforce toggle** — hidden until CustomRoutes is unlocked; grays out when no vehicles are assigned
+- **Update4 truck filter support** and new Sandbox options
+- All settings persist across save/load
+
+---
+
+### 🎮 COIExtended‑Cheats — God‑Mode Toolkit
+
+<details>
+<summary><b>Settlement & Needs</b></summary>
+
+- Direct numeric edits: population, Unity, Unity cap
+- Toggles: No Food / Electricity / Clean Water / Computing Need, No Disease Effects
+- One‑click: Fill Food Markets, Fill Animal Farms
 </details>
 
 <details>
-<summary><h4>🔧 Other Features</h4></summary>
+<summary><b>Economy & Progression</b></summary>
 
-#### Unlimited Demolish
-- Always allow demolition of static entities (`AlwaysAllowBulldoze`)
-
-#### Fix Stuck Trucks
-- Tweaks cargo‑stuck edge cases for trucks that pick up dump material
-
-</details>
-
-Tweaks integrates cleanly with both Core and mostly vanilla games. 
-
+- Instant Build/Research, No Construction Costs
+- Free Power / Computing / Unity generation
+- No Maintenance toggle, Fill All Depots
+- Free / Finish Current / All / Repeatable Research
+- Infinite Focus, Focus multiplier
+- Instant DeleteStorages
+- Item Sink / Item Source in any game mode
 </details>
 
 <details>
-<summary><h3>📦 COIExtended.StoragePlus – Storage & Buffer Overhaul</h3></summary>
+<summary><b>Environment & Resources</b></summary>
 
-StoragePlus replaces the vanilla storage inspector with a persistent, configurable panel. 
-
-#### Capacity & Defaults
-- **Per‑storage capacity**
-  - Change capacity via text field; updates underlying buffer capacity
-  - If new capacity is lower than current contents, excess is pushed out through the logistics buffer (not destroyed)
-- **Make Default**
-  - Writes the current capacity back to the storage **prototype** and to StoragePlus config
-  - Future storages of that type spawn with your chosen capacity
-
-#### "Allow All" Product Types
-- `Allow All` toggle:
-  - For non‑nuclear storages: Allows any compatible product of the same **product type**
-  - Works with enhanced product picker for products beyond vanilla `StorableProducts`
-
-#### Import/Export & I/O Controls
-- Full set of synchronized sliders + numeric fields:
-  - `Import` (truck import until %)
-  - `Export` (truck export from %)
-  - `Transport From` & `Transport Until` (belt/pipe throughput thresholds)
-- Drag sliders OR type exact percentages
-- Logic keeps import/export mutually sensible
-
-#### Persistence
-- StoragePlus config stores per‑prototype defaults and per‑instance behavior
-- Your choices persist across save/load
-
+- Toggle all pollution types and waste generation
+- Unlimited Water, Unlimited Oil
+- Unlimited Fuel Gas (requires Core)
+- Asteroid spawning with material, mix ratio, and radius controls
 </details>
 
 <details>
-<summary><h3>🎮 COIExtended. Cheats – Cheat / God‑Mode Toolkit</h3></summary>
+<summary><b>Terrain & Weather</b></summary>
 
-Cheats adds a multi‑tab cheat UI backed by `CheatFlags` and deep integration with the simulation. 
-
-<details>
-<summary><h4>🏘️ Settlement & Needs</h4></summary>
-
-- Direct numeric edits: Total **population**, **Unity**, and **Unity cap**
-- Needs toggles: `No Food Need`, `No Electricity Need`, `No Clean Water Need`, `No Computing Need`
-- `No Disease Effects`: Sets disease effect/mortality multipliers to zero
-- One‑click actions:
-  - `Fill Food Markets` – maxes configured food buffers
-  - `Fill Animal Farms` – adds animals and fills feed/water
-
+- Process/clear designations, change terrain material, instant surfaces
+- Tree tools: instant plant/remove with spacing
+- Lock weather, adjust sun/rain intensity
 </details>
 
 <details>
-<summary><h4>💰 Economy & Progression</h4></summary>
+<summary><b>Exploration & Logistics</b></summary>
 
-- **Build & research:** `Instant Build/Research`, `No Construction Costs`
-- **Free resource generation:** Power, Computing, Unity (per tick/month)
-- **Maintenance:** `No Maintenance` toggle, `Fill All Depots`
-- **Research:** `Free Research`, `Finish Current/All/Repeatable Research`
-- **Focus system:** `Infinite Focus`, `Focus Multi` percentage adjustment
-- **Gameplay:** `Instant Delete Storages`
-
+- Instant cargo ships, disable fuel consumption
+- Fast ore sorting, train/vehicle capacity
+- Reveal / scan / visit all world locations, defeat all enemies
+- Shipyard product adder
 </details>
 
 <details>
-<summary><h4>🌍 Environment & Resources</h4></summary>
+<summary><b>Vehicles & Vehicle Editor</b></summary>
 
-- **Pollution & waste:** Toggle all pollution types and waste generation
-- **Virtual reserves:** `Unlimited Water`, `Unlimited Oil`
-- **Asteroid spawning:** Choose materials, mix ratio, radius, and spawn
-
+- Lists all `DrivingEntityProto`;per‑vehicle Edit button for deep tuning (capacity, speed, costs)
 </details>
 
 <details>
-<summary><h4>⛰️ Terrain & Weather</h4></summary>
+<summary><b>✨ CreativeMode (one‑click macro)</b></summary>
 
-- **Terrain operations:** Process/clear designations, change terrain material, instant surfaces
-- **Tree tools:** Instant plant/remove with spacing control
-- **Weather:** Lock weather, adjust sun/rain intensity, toggle rendering
-
+Enables: 9 999 Unity, free power/computing, explore world map, unlock all tech, instant build, disable maintenance, raise vehicle cap, fill food markets, and more.
 </details>
 
-<details>
-<summary><h4>🚢 Exploration & Logistics</h4></summary>
+---
 
-- **Ships & fuel:** Instant cargo ships, disable fuel consumption
-- **Throughput & capacity:** Fast ore sorting, train/vehicle capacity adjustments
-- **World map:** Reveal/scan/visit all locations, defeat all enemies
-- **Shipyard product adder:** Add arbitrary products to shipyard or world storages
+### ⚙️ COIExtended‑Difficulty — Extended Difficulty Sliders
 
-</details>
+Rebuilds vanilla `GameDifficultyConfig` ranges via reflection — sliders from **–90 %** to **+500 %** with fine‑grained steps for:
 
-<details>
-<summary><h4>🚗 Vehicles & Vehicle Editor</h4></summary>
+> Extra starting material · Maintenance cost · Fuel consumption · Rain& farm yield · Base health · Resource mining · Settlement & food consumption · World mine reserves · Unity production · Construction costs · Treesgrowth · Contracts profit · Research cost · Quick actions cost · Disease mortality · Solar efficiency · Pollution impact
 
-- Scans all `DrivingEntityProto` and lists them
-- Each entry has an `Edit` button opening the **Vehicle Editor**
-- Allows deep tuning (capacity, speed, costs, etc.)
+---
 
-</details>
+### 🛠️ COIExtended‑RecipeMaker — Custom Recipe Tool
 
-<details>
-<summary><h4>✨ Creative Mode</h4></summary>
+-Accessible from the main menu after enabling the mod
+- Create, edit, and package custom recipes
+- Custom recipe packs remain fully compatible across updates
 
-One‑click macro combining:
-- 9999 Unity cap & Unity; 9999 monthly Unity
-- 9999 MW and 9999 TFlops free per month
-- Explore world map; unlock all technology
-- Raise vehicle cap; fill food markets
-- Enable Instant Build; disable maintenance
-- And much more... 
+---
 
-</details>
+### 🚗 COIExtended‑VehicleMaker *(Experimental)*
 
-</details>
+- Clone and customize vehicles
+- Amphibious property copying fixed
 
-<details>
-<summary><h3>⚙️ COIExtended.Difficulty – Extended Difficulty Sliders</h3></summary>
+---
 
-Rebuilds the vanilla **GameDifficultyConfig** ranges using reflection, drastically expanding slider options.
+### 🧹 COIExtended‑Sanitizer — Save Config Cleaner
 
-- Each difficulty setting gets **much wider ranges**, typically from **–90% up to +500%**, with fine‑grained steps
-- Affected settings include:
-  - Extra starting material
-  - Maintenance cost difficulty
-  - Fuel consumption
-  - Rain yield and farm yield
-  - Base health
-  - Resource mining rates
-  - Settlement consumption and food consumption
-  - World mine reserves
-  - Unity production
-  - Construction costs
-  - Trees growth
-  - Extra contracts profit
-  - Research cost
-  - Quick actions cost
-  - Disease mortality
-  - Solar power efficiency
-  - Pollution impact
+> ⚠️ This is **not** a generic "remove any mod" tool. It only cleans dead config references.
 
-Safe to run with vanilla or Core. 
-
-</details>
-
-<details>
-<summary><h3>🔧 COIExtended.ItemSink – Dev Spawner & Sink</h3></summary>
-
-- Adds a universal **resource spawner** (source entity)
-- Adds a universal **sink** (void entity)
-- Useful for:
-  - Testing recipes and chains
-  - Building blueprints
-  - Emergency cleanup in broken saves
-
-</details>
-
-<details>
-<summary><h3>🧹 COIExtended.Sanitizer – Save Config Sanitizer</h3></summary>
-
-> **⚠️ Critical Warning:** This is **not** a generic "remove any mod and keep playing" tool. It is only for cleaning **dead config references** from saves.
-
-#### Console Command
 ```
 sanitize_configs
+
 ```
 
-#### Behavior
-- Reflects into the game's internal dependency resolver and `GameSaver` to:
-  - Remove mod/config instances for mods that only leave configs (e.g. `COIExtended.Cheats`, `Tweaks`, `StoragePlus`, etc.)
-- Produces a save that no longer hard‑references those configs
+Removes config instances for mods that only leave configs (Cheats, Tweaks, StoragePlus, etc.). Does **not** remove custom buildings, products, recipes, or entities. Always back up saves first.
 
-#### Does NOT Remove
-- Custom buildings, products, recipes, entities, or world changes
-- If you remove a mod that added content the save still uses, the save may still crash
-
-**Always back up your saves before running `sanitize_configs`.**
-
-</details>
+> *May be deprecated — the base game appears to have adopted equivalent functionality in Update 4.*
 
 ---
 
-## 🐛 Support & Issues
+## 🐛 Reporting Bugs
 
-### Reporting Bugs
+When [opening an issue](https://github.com/Keranik/COI-Extended/issues/new), please include:
 
-Found a bug? Please help improve COIExtended by [opening an issue](../../issues/new)!
+- Which COIExtended mod(s) you're using and their version
+- Captain of Industry game version
+- Steps to reproduce
+- Screenshots, console log (`F1` → `dump_log`), and/or save file
 
-**When reporting, please include:**
-- Which COIExtended mod(s) you're using
-- Captain of Industry version
-- Steps to reproduce the issue
-- Screenshots or logs if applicable
-- Your save file (if relevant and comfortable sharing)
-
-### Feature Requests
-
-Have an idea for a new feature? [Open a feature request](../../issues/new) and describe:
-- What you'd like to see added
-- Why it would be useful
-- Any implementation ideas (optional)
-
-### Discussions
-
-For general questions, tips, or sharing your creations, visit the [Discussions](../../discussions) section! 
+For general discussion, visit the [Discussions](https://github.com/Keranik/COI-Extended/discussions) tab or join us on [Discord](https://discord.gg/JmVjxdwX).
 
 ---
 
-## 📄 License
+## ❤️ Support the Project
 
-**Copyright © Keranik.  All Rights Reserved.**
+COI:Extended is free and always will be. If you'd like to support continued development:
 
-This mod is **not open source**. It is provided in accordance with the [MaFi Games Modding Policy](https://www.captain-of-industry.com/modding). 
+- [Patreon](https://patreon.com/keranik)
+- [Ko‑fi](https://ko-fi.com/keranik)
+- [PayPal](https://www.paypal.me/undiscoveredent)
 
-**You may:**
-- Download and use this mod for personal gameplay
-- Share links to this repository
-- Create derivative works for personal use
+---
 
-**You may NOT:**
-- Redistribute this mod or any part of it on other platforms
-- Use this code in commercial projects
-- Claim this work as your own
-- Modify and redistribute without explicit permission
+📄 License & Legal
 
-For permissions beyond this scope, please [open an issue](../../issues) to discuss. 
+Copyright ©2024-2026 Keranik. All Rights Reserved.
+
+COI:Extended is original work created and maintained by Keranik. 
+
+Portions of this mod interface with and are based upon material from Captain of Industry, used in accordance with the Official Captain of Industry Modding Policy.
+
+Required notice: Portions © MaFi Games – used under the Captain of Industry Modding Policy. Not for standalone use.
+
+This mod is provided free of charge and is not standalone software. It requires a licensed copy of Captain of Industry to function.
+
+All rights reserved. Unauthorized copying, modification, or redistribution of this mod is prohibited.
+
+### You may:
+
+- ✅ Download and use this mod for personal gameplay on a lawfully obtained copy of Captain of Industry
+- ✅ Share links to this repository
+- ✅ Make voluntary donations (Patreon, Ko‑fi, PayPal)
+- ✅ Create derivative works for personal use
+
+### You may NOT:
+
+- ❌ Redistribute this mod or any part of it on other platforms without permission
+- ❌ Charge a mandatory fee, paywall, or sell this mod
+- ❌ Claim this work as your own
+
+For permissions beyond this scope, please [open an issue](https://github.com/Keranik/COI-Extended/issues) to discuss.
 
 ---
 
 <div align="center">
 
-**Enjoy building your industrial empire!  🏭**
+Made with ⚙️ for **Captain of Industry**
 
-Made with ⚙️ for Captain of Industry
-
-[⬆ Back to Top](#-coiextended-mod-family)
+[⬆ Back to Top](#-coiextended-mod-suite)
 
 </div>
