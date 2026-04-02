@@ -7,7 +7,7 @@ A comprehensive, modular family of mods for **Captain of Industry**
 ![Update](https://img.shields.io/badge/Update%204-Compatible-brightgreen)
 ![License](https://img.shields.io/badge/License-All%20Rights%20Reserved-red)
 
-[📥 Download Latest Release](https://github.com/Keranik/COI-Extended/releases/latest) · [🐛 Report Bug](https://github.com/Keranik/COI-Extended/issues/new) · [💡 Request Feature](https://github.com/Keranik/COI-Extended/issues/new) · [💬 Discussions](https://github.com/Keranik/COI-Extended/discussions) · [💬 Discord](https://discord.gg/JmVjxdwX)
+[📥 Download Latest Release](https://github.com/Keranik/COI-Extended/releases/latest) · [🐛 Report Bug](https://github.com/Keranik/COI-Extended/issues/new) · [💡 Request Feature](https://github.com/Keranik/COI-Extended/issues/new) · [💬 Discussions](https://github.com/Keranik/COI-Extended/discussions) · [💬 Discord](https://discord.gg/ZN5ANQffj6)
 
 ---
 
